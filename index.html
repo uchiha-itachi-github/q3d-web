@@ -1,0 +1,975 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;" />
+	<meta name="renderer" content="webkit">
+	<meta name="keywords" content="blockchain,lottery" />
+	<meta name="description" content="International blockchain lottery based on Ethereum smart contacts" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+
+	<title>International blockchain lottery</title>
+
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="">
+	<nav id="topNav">
+		<div id="topNavWrap">
+			<div id="topNavLeft">Welcome To <a href="http://lottery3.vip">LOTTERY3.VIP </a>
+				
+
+			</div>
+			<ul id="topNavRight">
+				<li>
+					<a href="javascript:void(0);" id="eth_network_name" >Detecting MetaMask</a>
+					&nbsp;&nbsp;|
+				</li>
+				<li>
+					<i class="icon_approve_gold" v-show="isVip"></i>
+					<a id="eth_account_addr" href="javascript:;">Detecting MetaMask</a>
+					&nbsp;&nbsp;
+				</li>
+				<li class="none">
+					<a id="my_balance"></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div id="app">
+		<nav id="topTabBox">
+			<div id="topTab">
+				<ul id="funcTab">
+					<li pid="award"><a href="javascript:;" @click="myTicketsClick" data-locale="my_tickets">My Tickets</a>|</li>
+
+					<li pid="howto"><a href="javascript:show_agent_box()" data-locale="referral_bonus">Referral Bonus</a>|</li>
+					<li pid="howto"><a href="javascript:show_invest_box()" data-locale="investors_plan">For Investors</a></li>
+					<li id="lotteryListEntry"><a class="topNavHolder" hidefocus="true" rel="nofollow" data-locale="language">Language<i></i></a>
+						<div id="lotteryList" style="display: none; left: 0px;">
+							<div class="lotteryListWrap">
+								<ul>
+									<li class="zyGame ">
+										<a gid="jczq" href="javascript:;">
+											<img src="img/en.svg" class="cz_logo35">English<span
+											 class="grayWords"></span></a></li>
+									<li class="zyGame ">
+										<a gid="jczq" href="./cn.html">
+											<img src="img/zh_man.svg" class="cz_logo35">Chinese(Simplified)<span
+											 class="grayWords"></span></a></li>
+									<li class="zyGame ">
+										<a gid="jczq" href="./zh_can.html">
+												<img src="img/zh_man.svg" class="cz_logo35">Chinese(Traditional)<span
+											 class="grayWords"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<aside class="awardBody">
+			<strong><b class="iconHorn"></b></strong>
+			<ul class="clearfix scroll-list" data-info="PublishResult">
+				<li v-for="item in PublishResult">
+					ROUND: <span class="c_ba2636">{{item.args._round | toParseInt}}</span>  <span class="c_ba2636">{{item.args._luckyusers
+						| toParseInt}}</span>
+					tickets win
+					<span class="c_ba2636">{{item.args._amount | toAmount}}</span> ETH.
+				</li>
+			</ul>
+		</aside>
+		<article class="docBody clearfix" id="docBody">
+			<header class="game_header clearfix">
+				<div class="game_logo">
+					<div class="cz_logo kuai3">
+						<span>
+							<span data-locale="total_jackpot">PRIZE POOL</span></span>
+						<div id="pool_total_balance" style="font-size:30pt;"></div>
+						ETH
+					</div>
+
+
+					<p class="game_intro">
+						<span>20
+							<b data-locale="per_round">Minutes every round</b></span>
+					</p>
+				</div>
+				<div class="betting_countDown" id="countDownLeft">
+					<p class="bet_period">
+						 Round <em class="c_ba2636" id="current_round"></em> TIME LEFT：
+					</p>
+					<p class="countDownBox">
+						<span>--:--</span>
+					</p>
+					<p class="intro">On the basis of blocktime</p>
+					<div class="tgTextWrap clearfix">
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div class="awardBox">
+					<div id="countDownRight">
+						<p class="bet_period">
+							Round <em class="c_ba2636" id="last_round">-</em> Lucky Numbers：<em class="c_ba2636" id="last_lucky_num">-</em>
+						</p>
+						<p class="awerdNum_balls fixBallPos"><em class="kuai3Ball nullData"></em><em class="kuai3Ball nullData"></em><em
+							 class="kuai3Ball nullData"></em></p>
+						<p class="awerdNum_other kjInfoBox">
+							SUM：<em class="c_ba2636">-</em>&nbsp;&nbsp;
+							<i>Style：<em class="numType nt_small">-</em><em class="numType nt_dual">-</em></i>
+						</p>
+					</div>
+					<div id="trendLinks">
+						<a href="javascript:show_agent_box()">Invit reward 5%~18%</a>
+						<a href="javascript:show_invest_box()">Share Contract</a>
+					</div>
+					<div class="show_moreAwards" id="awardListBtn" onclick="$('#awardList').toggle();">
+						About Contract <i class="openDetail"></i>
+					</div>
+				</div>
+			</header>
+			<section class="awardList">
+				<div id="awardList" class="hide">
+					<div>
+						<h1>Ticket System</h1>
+						<ul>
+							<li>1, This is a game base on Ethereum Smart Contract</li>
+							<li>2, Ticket System use Smart Contract to accept bet and send reward</li>
+							<li>3, For security reason, we will verify code later. The current Contract Address is 0x0000</li>
+							<li>4, SLT (Share of Lottery3.VIP Token) is the booklet of share certificates. Contract Address : 0x2878d33523a8025b66bdf606c8670fdf3f4c8cdd</li>
+							<li>5, System run on the IPFS, never stopped.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="main clearfix">
+				<div class="clearfix menuBox">
+					<ul class="gameMenu">
+						<li class="active"><a hidefocus="true" href="index.html">Buy Ticket</a></li>
+					</ul>
+					<ul class="moreLink">
+						<li><a data-click="scroll" href="#awardTableInfo" ><i class="gameIntru_icon"></i>Game Rule</a></li>
+					</ul>
+					<p>SERVICE: 24 HOURS EVERY DAY</p>
+				</div>
+				<section class="bettingBox">
+					<nav class="gameMenus">
+						<ul id="k3_tab">
+							<li name="hz" class="active"><strong>Summary</strong> <em>BONUS:0.1-2.4
+									ETH</em></li>
+							<li name="3tx"><strong>ALL 3 IDENTICAL</strong> <em data-plus-game="3tx">BONUS:0.4 ETH</em></li>
+							<li name="3dx"><strong>SINGLE 3 IDENTICAL</strong> <em data-plus-game="3dx">BONUS:2.4 ETH</em>
+								<span class="tipPop"><i></i>HIGHEST BONUS</span>
+							</li>
+							<li name="3bt"><strong>3 DIFF</strong> <em data-plus-game="3bt">BONUS:0.4
+									ETH</em></li>
+							<li name="3lt"><strong>3 CONSECUTIVE</strong> <em data-plus-game="3lt">BONUS:0.1 ETH</em></li>
+							<li name="2fx"><strong>ALL 2 IDENTICAL</strong> <em data-plus-game="2fx">BONUS:0.14</em></li>
+							<li name="2dx"><strong>SINGLE 2 SINGLE</strong> <em data-plus-game="2dx">BONUS:0.8 ETH</em></li>
+							<li name="2bt"><strong>2 DIFF</strong> <em data-plus-game="2bt">BONUS:0.08
+									ETH</em>
+								<span class="tipPop"><i></i>EASY TO WIN</span></li>
+						</ul>
+					</nav>
+					<div id="mainPanels">
+						<div class="betBox hezhi " id="panl_hz">
+							<div class="title">
+								<h3>GAME RULE</h3>
+								At least 1 and the value (sum of 3 numbers) are selected for purchase, and the selected value is the same as the sum of the 3 numbers of the lottery. The highest bonus is <em>2.4</em>ETH。 <i class="jtip questionMark" tip="#tip_hz"></i>
+							</div>
+
+							<div class="select_num">
+
+								<ul class="Blocksballs OneNum clearfix">
+									<li class="js_ball" data-value="3" data-eth="2.4"><em>3</em><span>BONUS<span style="color: #b12034">2.4 ETH</span></span></li>
+									<li class="js_ball" data-value="4" data-eth="0.8"><em>4</em><span>BONUS<span style="color: #b12034">0.8ETH</span></span></li>
+									<li class="js_ball" data-value="5" data-eth="0.4"><em>5</em><span>BONUS<span style="color: #b12034">0.4ETH</span></span></li>
+									<li class="js_ball" data-value="6" data-eth="0.24"><em>6</em><span>BONUS<span style="color: #b12034">0.24ETH</span></span></li>
+									<li class="js_ball" data-value="7" data-eth="0.16"><em>7</em><span>BONUS<span style="color: #b12034">0.16ETH</span></span></li>
+									<li class="js_ball" data-value="8" data-eth="0.12"><em>8</em><span>BONUS<span style="color: #b12034">0.12ETH</span></span></li>
+									<li class="js_ball" data-value="9" data-eth="0.1"><em>9</em><span>BONUS<span style="color: #b12034">0.1ETH</span></span></li>
+									<li class="js_ball" data-value="10" data-eth="0.08"><em>10</em><span>BONUS<span style="color: #b12034">0.08ETH</span></span></li>
+									<li class="js_ball" data-value="11" data-eth="0.08"><em>11</em><span>BONUS<span style="color: #b12034">0.08ETH</span></span></li>
+									<li class="js_ball" data-value="12" data-eth="0.1"><em>12</em><span>BONUS<span style="color: #b12034">0.1ETH</span></span></li>
+									<li class="js_ball" data-value="13" data-eth="0.12"><em>13</em><span>BONUS<span style="color: #b12034">0.12ETH</span></span></li>
+									<li class="js_ball" data-value="14" data-eth="0.16"><em>14</em><span>BONUS<span style="color: #b12034">0.16ETH</span></span></li>
+									<li class="js_ball" data-value="15" data-eth="0.24"><em>15</em><span>BONUS<span style="color: #b12034">0.24ETH</span></span></li>
+									<li class="js_ball" data-value="16" data-eth="0.4"><em>16</em><span>BONUS<span style="color: #b12034">0.4ETH</span></span></li>
+									<li class="js_ball" data-value="17" data-eth="0.8"><em>17</em><span>BONUS<span style="color: #b12034">0.8ETH</span></span></li>
+									<li class="js_ball" data-value="18" data-eth="2.4"><em>18</em><span>BONUS<span style="color: #b12034">2.4ETH</span></span></li>
+								</ul>
+
+								<div class="jiangBox jiajiangBox clearfix hide">
+									<span>ADD BONUS</span>
+									<ul></ul>
+								</div>
+								<div class="OptimizeBox js-datas-con clearfix">
+
+									<ul class="Blocksballs clearfix"></ul>
+								</div>
+
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>元
+								</span>
+							</p> -->
+
+						</div>
+						<div class="betBox sthtx hide " id="panl_3tx">
+							<div class="title">
+								<h3>GAME RULE</h3>
+								Purchase all the same three numbers (111, 222, 333, 444, 555, 666), any number will be won, single note bonus <em>0.4</em>ETH。<i class="jtip questionMark" tip="#tip_3tx"></i>
+							</div>
+
+
+							<div class="select_num ">
+								<div class="Blocksballs sthtx_ball">
+									<em title="ALL 3 IDENTICAL" class="js_ball" data-value="1" data-eth="0.4">
+											ALL 3 IDENTICAL
+									</em>
+								</div>
+
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>元
+								</span>
+							</p> -->
+
+						</div>
+						<div class="betBox sthdx hide " id="panl_3dx">
+							<div class="title">
+								<h3>RULE</h3>
+								Purchase one of the same three numbers (111, 222, 333, 444, 555, 666), the selected number will be won, single note bonus <em>2.4</em>ETH。
+								<i class="jtip questionMark" tip="#tip_3dx"></i>
+							</div>
+
+
+							<div class="select_num">
+								<ul class="Blocksballs twoNumBt clearfix" id="k3_3dx_balls">
+									<li class="js_ball" data-value="1"><em>1</em><em>1</em><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em><em>2</em><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em><em>3</em><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em><em>4</em><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em><em>5</em><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em><em>6</em><em>6</em></li>
+
+								</ul>
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+								</span>
+							</p> -->
+
+						</div>
+						<div class="betBox sbth hide " id="panl_3bt">
+
+							<div class="gameWrap putong">
+								<div class="title">
+									<h3>GAME RULE</h3>
+									Choose 3 or more numbers from 1 to 6. The selected number is the same as the 3 numbers of the lottery number.BONUS<em>0.4</em>ETH。<i class="jtip questionMark" tip="#tip_3bt"></i>
+								</div>
+
+
+								<div class="select_num">
+									<ul class="Blocksballs OneNum clearfix">
+										<li class="js_ball" data-value="1"><em>1</em></li>
+										<li class="js_ball" data-value="2"><em>2</em></li>
+										<li class="js_ball" data-value="3"><em>3</em></li>
+										<li class="js_ball" data-value="4"><em>4</em></li>
+										<li class="js_ball" data-value="5"><em>5</em></li>
+										<li class="js_ball" data-value="6"><em>6</em></li>
+
+									</ul>
+
+								</div>
+								<!-- <p class="selectInfo">
+									<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+									</span>
+								</p> -->
+								<!--<div style="text-align:center">
+								<button style="height:40px;font-size:16pt;padding:5px" id="confirm_single_num">确认选号</button>
+							</div> -->
+							</div>
+
+						</div>
+						<div class="betBox slhtx hide " id="panl_3lt">
+							<div class="title">
+								<h3>GAME RULE</h3>
+								Purchase all 3 connected numbers (123, 234, 345, 456), any number will be won, single note bonus <em>0.1</em>ETH。<i class="jtip questionMark" tip="#tip_3lt"></i>
+							</div>
+
+
+							<div class="select_num ">
+								<div class="Blocksballs slhtx_ball">
+									<em title="3 CONSECUTIVE" class="js_ball" data-value="1">3 CONSECUTIVE</em>
+								</div>
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+								</span>
+							</p> -->
+
+						</div>
+						<div class="betBox ethfx hide " id="panl_2fx">
+							<div class="title">
+								<h3>GAME RULE</h3>
+								Select one or more numbers from 11 to 66, and the selection number is the same as the prize number (including 11 to 66, indefinite order). BOUNS <em>0.14</em>ETH。<i class="jtip questionMark" tip="#tip_2fx"></i>
+							</div>
+
+
+							<div class="select_num">
+								<ul class="Blocksballs twoNum clearfix">
+									<li class="js_ball" data-value="1"><em>1</em><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em><em>6</em></li>
+
+								</ul>
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+								</span>
+							</p> -->
+
+						</div>
+						<div class="betBox ethdx hide " id="panl_2dx">
+							<div class="title">
+								<h3>GAME RULE</h3>
+								Choose 1 pair of the same number and 1 different number to buy, the selection number is the same as the prize number (in any order), bonus <em>0.8</em>ETH。<i class="jtip questionMark" tip="#tip_2dx"></i>
+							</div>
+
+
+							<div class="select_num">
+								<ul class="Blocksballs twoNum clearfix js_balls">
+									<li class="title">SAME NUMBER:</li>
+									<li class="js_ball" data-value="1"><em>1</em><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em><em>6</em></li>
+
+								</ul>
+								<ul class="Blocksballs twoNumBt js_balls clearfix">
+									<li class="title">DIFFERENT NUMBER:</li>
+									<li class="js_ball" data-value="1"><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em></li>
+
+								</ul>
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+								</span>
+							</p> -->
+
+						</div>
+						<div class="betBox ebth hide " id="panl_2bt">
+
+							<div class="gameWrap putong">
+								<div class="title">
+									<h3>GAME RULE</h3>
+									Choose 2 or more numbers from 1 to 6. The selected number is the same as any 2 numbers of the lottery number. bonus <em>0.08</em>ETH。<i class="jtip questionMark" tip="#tip_2bt"></i>
+								</div>
+								<div class="chartWrap hide "></div>
+
+								<div class="select_num">
+									<ul class="Blocksballs OneNum clearfix">
+										<li class="js_ball" data-value="1"><em>1</em></li>
+										<li class="js_ball" data-value="2"><em>2</em></li>
+										<li class="js_ball" data-value="3"><em>3</em></li>
+										<li class="js_ball" data-value="4"><em>4</em></li>
+										<li class="js_ball" data-value="5"><em>5</em></li>
+										<li class="js_ball" data-value="6"><em>6</em></li>
+
+									</ul>
+
+								</div>
+								<!-- <p class="selectInfo">
+									<span>您选中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>元
+									</span>
+								</p> -->
+
+							</div>
+
+						</div>
+						
+					</div>
+					<span id="tip_hz" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">8</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1
+							3 4</span><br /> BONUS <span class="c_ba2636">0.12<span data-plus-game="hz" data-key="12"></span>ETH
+						</span> </span> <span id="tip_3tx" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">ALL 3 IDENTICAL</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1 1 1</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3tx"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 IDENTICAL</span><br /> LUCKY NUMBERS:<span class="c_ba2636">2 2 2</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3tx"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 IDENTICAL</span><br /> LUCKY NUMBERS:<span class="c_ba2636">3 3 3</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3tx"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 IDENTICAL</span><br /> LUCKY NUMBERS:<span class="c_ba2636">4 4 4</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3tx"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 IDENTICAL</span><br /> LUCKY NUMBERS:<span class="c_ba2636">5 5 5</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3tx"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 IDENTICAL</span><br /> LUCKY NUMBERS:<span class="c_ba2636">6 6 6</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3tx"></span>ETH
+						</span> </span> <span id="tip_3dx" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">1 1 1</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1 1 1</span><br /> BONUS:<span class="c_ba2636">2.4<span
+							 data-plus-game="3dx"></span>ETH
+						</span> </span> <span id="tip_3bt" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">2 4 6</span><br /> LUCKY NUMBERS:<span class="c_ba2636">2 4 6</span><br /> BONUS:<span class="c_ba2636">0.4<span
+							 data-plus-game="3bt"></span>ETH
+						</span> </span> <span id="tip_3lt" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">ALL 3 CONSECUTIVE</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1 2 3</span><br /> BONUS:<span class="c_ba2636">0.1<span
+							 data-plus-game="3lt"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 CONSECUTIVE</span><br /> LUCKY NUMBERS:<span class="c_ba2636">2 3 4</span><br /> BONUS:<span class="c_ba2636">0.1<span
+							 data-plus-game="3lt"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 CONSECUTIVE</span><br /> LUCKY NUMBERS:<span class="c_ba2636">3 4 5</span><br /> BONUS:<span class="c_ba2636">0.1<span
+							 data-plus-game="3lt"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">ALL 3 CONSECUTIVE</span><br /> LUCKY NUMBERS:<span class="c_ba2636">4 5 6</span><br /> BONUS:<span class="c_ba2636">0.1<span
+							 data-plus-game="3lt"></span>ETH
+						</span><br /> </span> <span id="tip_2fx" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">1 1</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1
+							1 2</span><br /> BONUS:<span class="c_ba2636">0.15<span data-plus-game="2fx"></span>ETH
+						</span><br />
+						<br /> NUMBER:<span class="c_ba2636">2 2</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1 2 2</span><br /> BONUS:<span class="c_ba2636">0.15<span
+							 data-plus-game="2fx"></span>ETH
+						</span> </span> <span id="tip_2dx" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER: SAME<span class="c_ba2636"> 1 1</span> DIFF<span class="c_ba2636">
+							3</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1 1 3</span><br /> BONUS:<span class="c_ba2636">0.8<span data-plus-game="2dx"></span>ETH
+						</span><br />
+						<br /> NUMBER:SAME<span class="c_ba2636"> 2 2</span> DIFF<span class="c_ba2636"> 1</span><br /> LUCKY NUMBERS:<span class="c_ba2636">2
+							2 1</span><br /> BONUS:<span class="c_ba2636">0.8<span data-plus-game="2dx"></span>ETH
+						</span> </span> <span id="tip_2bt" class="jtipWraper hide"><i></i> <strong>e.g</strong><br />
+						NUMBER:<span class="c_ba2636">1 2</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1
+							2 3</span><br /> BONUS:<span class="c_ba2636">0.8<span data-plus-game="2bt"></span>ETH
+						</span> </span>
+					<p class="selectInfo"><span><strong class="c_ba2636">{{selectBetNum | toParseInt}}</strong> tickets selected <strong class="c_ba2636">{{betMul
+								| toParseInt}}</strong> multiple,<strong class="c_ba2636">{{selectOnceNum | toFix(2)}}</strong>ETH
+							<span class="c_727171" v-show="selectGain"> GET <strong class="c_ba2636"> {{selectBonusResult | toFix(2)}}
+								</strong>ETH IF WINNING, PROFIT <strong class="c_ba2636"> {{selectGain | toFix(2)}} </strong>ETH</span></span></p>
+					<div style="text-align: center; margin: 30px;">
+						<span style="height: 50px; font-size: 18pt;" id="my_number"></span>
+						<input id="my_number_1" type="hidden">
+						<input id="my_number_2" type="hidden">
+						<input id="my_number_3" type="hidden">
+						<input id="my_number_type" type="hidden">
+					</div>
+					<div class="betresult">
+						<span class="holderWrapLeft"><strong class="betNumCount">1</strong>tickets,
+						</span>
+						<span class="beiNumWrap">multiple
+							<span class="addSubtract">
+								<a href="javascript:;" rel="nofollow" hidefocus="true" class="subtract" @click="subtractMul"></a>
+								<input type="tel" v-model.lazy="betMul" id="betNum" @change="checkMul" />
+								<a href="javascript:;" rel="nofollow" hidefocus="true" class="add" @click="addMul"></a>
+							</span>(MAX {{maxBetMul}})，
+						</span>
+						<span class="holderWrapRight"><strong class="betMoneyCount">{{0.02 * betMul | toFix(2)}}</strong>ETH&nbsp;
+						</span>
+					</div>
+					<center>
+						<button class="btn_bet disabled">Purchase</button>
+					</center>
+					<div class="moreOperate clearfix">
+						<div class="moreOperate_con">
+							<div id="zhuihaoWrap" class="hide">
+								<div class="loadingData">LOADING... &hellip;</div>
+							</div>
+							<div id="groupbuyWrap" class="hide">
+								<div class="loadingData">LOADING... &hellip;</div>
+							</div>
+						</div>
+					</div>
+					<div class="betBtnBox"></div>
+					<div class="bottomBox flex-box">
+						<div class="flex-item">
+							<h3>
+								LATEST: <b class="iconHorn"></b>
+							</h3>
+							<ul class="helpContent scroll-list" style="display: block" data-info="betArr">
+								<!-- TODO 轮动给出中奖信息 -->
+								<li v-cloak v-for="item in betArr">
+									[ROUND <span class="c_ba2636">{{item.args.round | toParseInt}}</span>]
+									{{item.args._addr}} 
+									<span class="c_ba2636">x {{item.args._mul | toParseInt}}</span></li>
+							</ul>
+						</div>
+						<div class="flex-item">
+							<h3>
+								WINNERS: <b class="iconHorn"></b>
+							</h3>
+							<ul class="helpContent scroll-list" data-info="LuckyGuyArr" style="display: block">
+								<li v-cloak v-for="item in LuckyGuyArr">
+									[ROUND <span class="c_ba2636">{{item.args._round | toParseInt}}</span>]
+									{{item.args._addr}},<span class="c_ba2636">{{LottoTypeName[language][item.args._type]}}
+										{{item.args._n1>0?item.args._n1:'' | toParseInt}} {{item.args._n2>0?item.args._n2:''
+										| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</span>, BONUS<span class="c_ba2636">{{item.args._amount
+										| toAmount}}</span>ETH</li>
+							</ul>
+						</div>
+					</div>
+					<div class="bottomBox" id="todayKaiJiang">
+						<h3>
+							<strong>Last 90 rounds</strong>
+							<span class="more"><em>Close</em><b>Open</b><i class="closeIcon"></i><i class="openIcon"></i></span>
+						</h3>
+						<div class="helpContent">
+							<table width="33.33%" border="0" cellspacing="0" class="winnerNum_table">
+								<thead>
+									<tr>
+										<th width="5%" class="period">Round</th>
+										<th width="8%">Numbers</th>
+										<th width="5%">Sum</th>
+										<th width="7%">Style</th>
+									</tr>
+								</thead>
+								<tbody>
+									<template v-for="(item,index) in betResultReverse" v-if="index < 30">
+										<tr :class="index%2===1 && 'bg_f7f7f7'">
+											<td class="period">{{item.args._round | toParseInt}}</td>
+											<td class="awardTd">{{item.args._n1>0?item.args._n1:'' | toParseInt}}
+												{{item.args._n2>0?item.args._n2:''
+												| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</td>
+											<td>{{parseInt(item.args._n1) + parseInt(item.args._n2) + parseInt(item.args._n3)}}</td>
+											<td :class="'color-state-'+numberType(parseInt(item.args._n1) , parseInt(item.args._n2) ,
+												parseInt(item.args._n3))">{{numberInform(parseInt(item.args._n1)
+												, parseInt(item.args._n2) ,
+												parseInt(item.args._n3))}}</td>
+										</tr>
+									</template>
+								</tbody>
+							</table>
+							<table width="33.33%" border="0" cellspacing="0" class="winnerNum_table">
+								<thead>
+									<tr>
+										<th width="5%" class="period">Round</th>
+										<th width="8%">Numbers</th>
+										<th width="5%">SUM</th>
+										<th width="7%">Style</th>
+									</tr>
+								</thead>
+								<tbody>
+									<template v-for="(item,index) in betResultReverse" v-if="index>=30 && index<60">
+										<tr :class="index%2===1 && 'bg_f7f7f7'">
+											<td class="period">{{item.args._round | toParseInt}}</td>
+											<td class="awardTd">{{item.args._n1>0?item.args._n1:'' | toParseInt}}
+												{{item.args._n2>0?item.args._n2:''
+												| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</td>
+											<td>{{parseInt(item.args._n1) + parseInt(item.args._n2) + parseInt(item.args._n3)}}</td>
+											<td :class="'color-state-'+numberType(parseInt(item.args._n1) , parseInt(item.args._n2) ,
+														parseInt(item.args._n3))">{{numberInform(parseInt(item.args._n1)
+												, parseInt(item.args._n2) ,
+												parseInt(item.args._n3))}}</td>
+										</tr>
+									</template>
+								</tbody>
+							</table>
+							<table width="33.33%" border="0" cellspacing="0" class="winnerNum_table">
+								<thead>
+									<tr>
+										<th width="5%" class="period">Round</th>
+										<th width="8%">Numbers</th>
+										<th width="5%">SUM</th>
+										<th width="7%">Style</th>
+									</tr>
+								</thead>
+								<tbody>
+									<template v-for="(item,index) in betResultReverse" v-if="index>=60">
+										<tr :class="index%2===1 && 'bg_f7f7f7'">
+											<td class="period">{{item.args._round | toParseInt}}</td>
+											<td class="awardTd">{{item.args._n1>0?item.args._n1:'' | toParseInt}}
+												{{item.args._n2>0?item.args._n2:''
+												| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</td>
+											<td>{{parseInt(item.args._n1) + parseInt(item.args._n2) + parseInt(item.args._n3)}}</td>
+											<td :class="'color-state-'+numberType(parseInt(item.args._n1) , parseInt(item.args._n2) ,
+														parseInt(item.args._n3))">{{numberInform(parseInt(item.args._n1)
+												, parseInt(item.args._n2) ,
+												parseInt(item.args._n3))}}</td>
+										</tr>
+									</template>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<div class="bottomBox" id="awardTableInfo">
+						<h3>
+							<strong>GAME RULE</strong>
+							<!--<span class="more"><em>收起</em><b>展开</b><i class="closeIcon"></i><i class="openIcon"></i></span> -->
+						</h3>
+						<div class="helpContent" style="display: block">
+							<table id="gameAwardIntro_con" class="prizeIntro_table">
+								<thead>
+									<tr>
+										<th width="20%">BIUY</th>
+										<th>Numbers(WITHOUT ORDER)</th>
+										<th width="15%">NUMBER</th>
+										<th width="20%">BONUS</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>SUM3</td>
+										<td>111</td>
+										<td bgcolor="#fff3da">SINGLE 3 IDENTICAL</td>
+										<td>0.24 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM4</td>
+										<td>112</td>
+										<td>Select all</td>
+										<td>0.8 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM5</td>
+										<td>113,122</td>
+										<td>Select all</td>
+										<td>0.4 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM6</td>
+										<td>114,123,222</td>
+										<td>Select all</td>
+										<td>0.24 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM7</td>
+										<td>115,124,133,223</td>
+										<td>Select all</td>
+										<td>0.16 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM8</td>
+										<td>116,125,134,224,233</td>
+										<td>Select all</td>
+										<td>0.12 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM9</td>
+										<td>126,135,144,225,234,333</td>
+										<td>Select all</td>
+										<td>0.1 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM10</td>
+										<td>136,145,226,235,244,334</td>
+										<td>Select all</td>
+										<td>0.08 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM11</td>
+										<td>146,155,236,245,335,344</td>
+										<td>Select all</td>
+										<td>0.08 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM12</td>
+										<td>156,246,255,336,345,444</td>
+										<td>Select all</td>
+										<td>0.1 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM13</td>
+										<td>166,256,346,355,445</td>
+										<td>Select all</td>
+										<td>0.12 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM14</td>
+										<td>266,356,446,455</td>
+										<td>Select all</td>
+										<td>0.16 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM15</td>
+										<td>366,456,555</td>
+										<td>Select all</td>
+										<td>0.24 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM16</td>
+										<td>466,556</td>
+										<td>Select all</td>
+										<td>0.4 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM17</td>
+										<td>566</td>
+										<td>Select all</td>
+										<td>0.8 ETH</td>
+									</tr>
+									<tr>
+										<td>SUM18</td>
+										<td>666</td>
+										<td bgcolor="#fff3da">SINGLE 3 IDENTICAL</td>
+										<td>2.4 ETH</td>
+									</tr>
+									<tr>
+										<td bgcolor="#fff3da">ALL 3 IDENTICAL</td>
+										<td rowspan="2" bgcolor="#fff3da">111,222,333,444,555,666</td>
+										<td bgcolor="#fff3da">All Selected</td>
+										<td bgcolor="#fff3da">0.4 ETH</td>
+									</tr>
+									<tr>
+										<td bgcolor="#fff3da">SINGLE 3 IDENTICAL</td>
+										<td bgcolor="#fff3da">single selected</td>
+										<td bgcolor="#fff3da">2.4 ETH</td>
+									</tr>
+									<tr>
+										<td>ALL 2 IDENTICAL</td>
+										<td>11*,22*,33*,44*,55*,66*</td>
+										<td>single selected</td>
+										<td>0.14 ETH</td>
+									</tr>
+									<tr>
+										<td bgcolor="#fff3da">SINGLE 2 SINGLE</td>
+										<td bgcolor="#fff3da">112,113,114,115,116,122,223,224,225,226,133,233,334,335,336,144,244,344,445,446,155,255,355,455,556,166,266,366,466,566</td>
+										<td bgcolor="#fff3da">single selected</td>
+										<td bgcolor="#fff3da">0.4 ETH</td>
+									</tr>
+									<tr>
+										<td>3 DIFF</td>
+										<td>123,124,125,126,134,135,136,145,146,156,234,235,236,245,246,256,345,346,356,456</td>
+										<td>single selected</td>
+										<td>0.4 ETH</td>
+									</tr>
+									<tr>
+										<td bgcolor="#fff3da">2 DIFF</td>
+										<td bgcolor="#fff3da">12*,13*,14*,15*,16*,23*,24*,25*,26*,34*,35*,36*,45*,46*,56*</td>
+										<td bgcolor="#fff3da">single selected</td>
+										<td bgcolor="#fff3da">0.08 ETH</td>
+									</tr>
+									<tr>
+										<td>ALL 3 CONSECUTIVE</td>
+										<td>123,234,345,456</td>
+										<td>Select all</td>
+										<td>0.1 ETH</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</section>
+			</section>
+		</article>
+		<!--<script src="../../js/queryAwardConfig.js"></script> -->
+
+		<div class="mask hide"></div>
+		<!--代理返币-->
+		<div class="iDialog dialog agent_dialog hide" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>Invitation reward plan</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" data-click="dialogClose"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain" style="height: auto;">
+										<div style="font-size:12px">
+											<p>1. The new address entered through the exclusive referral link will be bound to the referrer for life.</p>
+											<p>2, each time the new address is purchased, the recommender will get BONUS ranging from 7% to 18%, and transfer to the agent's wallet address in real time.</p>
+											<p>3, the cashback rule is written to the smart contract, can not be changed, will be paid immediately.</p>
+											<p>4, the recommender according to the performance or purchase VIP status, respectively BONUS are as follows:
+</p>
+											<p>4.1 New referrer link can get 5% of user spending as BONUS</p>
+											<p>4.2 Performance reached 10 ETH can get 7% of user consumption as BONUS</p>
+											<p>4.3 Performance reached 30 ETH can receive 10% of user consumption as BONUS</p>
+											<p>4.4 Performance reached 100 ETH 15% of user consumption as BONUS</p>
+											<p>5. In addition, we have also opened a channel for paid referrals for senior referees. If you want to get 18% of users directly BONUS, please <a href="javascript:Account.buy_agent()" class="c_ba2636">click here to pay 50
+													ETH</a>.The smart contract will immediately give the address a high-level referee qualification, and each purchase can get 18% BONUS through the recommended address.</p>
+										</div>
+										<div style="text-align:center">
+											<p id="my_ref_agent_link" class="c_ba2636">{{myRefAgentLink}}</p>
+											<a href="javascript:;" data-click="copy" :data-clipboard-text="myRefAgentLink">点击复制链接</a>
+										</div>
+										
+									</div>
+								</div>
+								<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" data-click="dialogClose"><span>确定</span></a></div>
+							</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 投资人计划 -->
+		<div class="iDialog dialog invest_dialog hide" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>Dividend investment plan</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" data-click="dialogClose"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain" style="height: auto;">
+										<div style="font-size:12px">
+											<p>1. The dividend contract is the shareholder contract of the intelligent lottery contract. The contract token is SLT (Share of Lottery Token).</p>
+											<p>2, the intelligent lottery deducts the lottery BONUS, recommended BONUS, from time to time to transfer the profit into the dividend contract.</p>
+											<p>3. When the contract balance is greater than 1 ETH, the dividend contract will be executed once a day. Dividends will automatically transfer ETH to the holder's Ethereum wallet in accordance with the SLT's share of earnings per share.</p>
+											<p>4，1 SLT = 0.1 ETHER</p>
+											<p>5, SLT initial offering 1,000,000 SLT</p>
+											<p>6，The initial issuance of tradable shares is 200,000 SLT, and the post-dividend contract ceases to receive ETH purchases.</p>
+											<p>7，The current contract has been paid <span id="total_share"> </span> ETH
+											<p>8，Currently sold <span id="slt_sold"></span> SLT,<span id="slt_left"></span> SLT left</p> 
+										</div>
+										<div>
+											Input SLT Shares you want to buy <input id="slt_count" type="tel" pattern="\d+" v-model="sltNum" @change="checkNum('sltNum')"> <span id="slt_price">{{sltPrice
+												| toFix(2)}}</span> ETHER
+										</div>
+										<div style="margin-top:10px;text-align:center">
+											<button id="buy_slt" class="buy_slt-btn">Purchase</button>
+										</div>
+										<div style="font-size:12pt">
+											Mail:  <a href="mailto:uchiha-itachi@mail.com">uchiha-itachi@mail.com</a>
+										</div>
+									</div>
+								</div>
+								<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" data-click="dialogClose"><span>确定</span></a></div>
+							</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 我的彩票 -->
+		<div class="iDialog my_tickes" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;"
+		 v-show="isMyTicketsShow">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>My Tickets</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" @click="dialogClose('isMyTicketsShow')"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain">
+										<div style="font-size:12px">
+											<p v-for="item in myTickets">
+												Round <span class="c_ba2636">{{item.args.round | toParseInt}}</span>  :
+												{{LottoTypeName[language][item.args._type]}}
+												<span class="c_ba2636">{{item.args._n1>0?item.args._n1:'' | toParseInt}} {{item.args._n2>0?item.args._n2:''
+													| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</span>, 
+												<span class="c_ba2636">{{item.args._mul | toParseInt}} multiple</span>
+											</p>
+										</div>
+									</div>
+									<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" @click="dialogClose('isMyTicketsShow')"><span>OK</span></a></div>
+								</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="iDialog" style="display:none;z-index: 10003; width: 430px; left: 50%; top: 50%; margin-top: -102.5px; margin-left: -215px;"
+		 id="iDialog1" v-show="isDialogShow">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>{{dialogTitle}}</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" @click="dialogDisplay(false)"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain" style="height: auto;">
+										<div style="font-size:12px">
+											<span v-cloak v-html="dialogMsg"></span>
+											<!-- <p style="margin:10px 0 0 0;"><span class="c_ba2636 endTime">{{dialogCloseCountdown}}</span>秒后将自动关闭</p> -->
+										</div>
+									</div>
+								</div>
+								<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" @click="dialogDisplay(false)"><span>OK</span></a></div>
+							</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<center>
+		<a href="mailto:uchiha-itachi@mail.com">Mail to us</a>
+		<br/>
+		<a href="https://twitter.com/lottery35">Tweet</a>
+	</center>
+	<script src="plugins/jquery.js"></script>
+	<script src="plugins/vue.js"></script>
+	<script src="plugins/plugins.js"></script>
+	<script>
+		var language ='en';
+	</script>
+	<script src="js/main.js"></script>
+</body>
+
+
+</html>

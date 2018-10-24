@@ -1,0 +1,192 @@
+language	语言
+referral_bonus	邀请奖励
+investors_plan	投资人计划
+lotto	彩票
+my_tickets	我的彩票
+per_round	分钟一期
+the	第
+round	期
+security	安全性
+help	帮助
+total_jackpot	奖池总金额
+jackpot	头奖
+instant_lottery	即时抽奖
+draw	抽奖
+draw_n	$1抽奖
+after_n	$1剩余时间
+buy_ticket_for	购买彩票
+buy_agreement	购买彩票即代表您已阅读并同意我们的彩票相关规则。
+buy	购买
+buy_for	$1购买
+rules	规则
+draw_archive	抽奖记录
+back	回到上一级
+no_draws	无抽奖
+no_tickets	无彩票
+active	有效
+played	已使用
+enter_wallet	输入您的钱包地址
+enter_wallet_hint	请输入您的ETH钱包地址（42位）
+no_win	赢 0 
+win_n	赢得$1
+select_n_numbers	选择$1数字
+winners	赢家
+no_winners	无赢家
+guess_n_numbers	猜测$1数字
+date	日期
+win_numbers	赢取数字
+collected	已收藏
+paid	已付款
+to_jackpot	去往头奖
+to_reserve	预订
+reserve	预定
+for_investors	投资者
+add_ticket	添加彩票
+remove_ticket	删除彩票
+next_draw	下一个抽奖
+draw_played	$1抽奖已完成！
+draw_played_win_numbers	赢家数字：
+playing	正在抽奖..
+community	社团： 
+mail_us	给我们发邮件：
+how_to_play	如何参加
+loading	正在加载..
+payment_success	付款成功
+payment_fail	付款失败
+your_transaction_on_etherscan	查看Etherscan上的转账记录
+address	地址
+send_eth_to_address	将您钱包中的ETH发送至智能合约地址
+while_sending_enter_data	发送时请输入相关信息：
+all_fields_required	需填写所有信息
+tickets_will_appear	转账完成后，可以在“我的彩票”中找到所有的彩票。
+transfer	转账
+support	支持
+cooperation	合作
+payment_methods	付款方式：
+manual_transfer	将ETH转账至智能合约
+for_payment	付款
+not_pay_from_exchanges	请勿用交易来付款
+amount	数值
+luckiest	大豪客
+for_all_time	直至今天
+amount_of_winnings	获取中奖<br>金额
+winning_tickets	赢取<br>彩票
+winning_jackpots	大头奖<br>赢家
+bitcoin_block_number	Bitcoin block<br>number
+transparency	Transparency
+enter_correct_hash	Enter correct hash
+partners	Partners
+to_address	To Address
+amount_to_send	Amount to<br>Send
+copied_to_clipboard	Copied to clipboard
+cant_copy	Can't copy
+copy_manually	Please select and copy manually
+gas_limit	Gas Limit
+gas_price	Gas Price
+tx_data	Data
+myetherwallet_will_opened_filled	The site myetherwallet.com with the filled transaction will be opened.
+login_into_wallet	Sign in to your wallet and complete the payment.
+first_payment	First payment?
+detailed_instruction	Detailed instruction
+pay_now	Pay now
+instruction	Instruction
+pay_myetherwallet	Pay with MyEtherWallet
+press_pay_now	1. Press button "Pay now"
+myetherwallet_will_opened	2. The site myetherwallet.com will be opened
+close_welcome_screen	3. Close welcome screen
+click_out_window	Click out of popup.
+sign_in_your_wallet	4. Sing in to your wallet
+sign_in_your_walle_any_variant	Any of the proposed methods.
+fields_are_filled	5. All fields are already filled in
+fields_are_filled_desc	Fire Lotto has already transferred all the necessary information about the payment.
+complete_payment	6. Complete transaction
+press_generate_transaction	Press button "Generate Transaction".
+press_send_transaction	Next press button "Send Transaction".
+check_my_tickets	7. Check "My Tickets"
+tickets	彩票
+ticket_1	彩票
+ticket_2	彩票
+ticket_5	彩票
+please_install_metamask	Please install MetaMask plugin:
+install_metamask	Install MetaMask
+login_metamask	Please login into MetaMask
+metamask_set_network	Please set Main Ethereum Network in MetaMask
+success	Success!
+metamask_complete	Tickets will appear in "My Tickets" after transaction is completed.
+help_title_1	如何参加
+help_content_1_1	请使用以太坊钱包购买彩票。点击$1阅读创建以太坊钱包的相关信息。
+help_content_1_2	在主页选择您想购买的彩票，您会跳转至彩票界面，选择一组数字，或点击魔棒图标，让电脑随机为您选择数字。一旦您选择了数字，魔棒图标将会变成垃圾桶图标。点击垃圾桶图标可删除您选好的数字，魔棒将再次出现以供选择。
+help_content_1_3	选择完毕后，请点击“购买”以购买彩票。系统会提示您使用MetaMask（建议与myetherwallet.com一起使用的Chrome浏览器安全插件）进行支付，您还可以将资金从您的以太坊钱包直接转账至彩票智能合约地址（适用于更高级的用户）。
+help_content_1_4	购买后，如果您覺得今天运气不錯，可返回上一级购买更多彩票 – 无需等候，彩票购买数量也没有限制。
+help_content_1_5	系统将在每一轮彩票抽奖前一小时停止接收新的彩票。在此后购买的所有彩票将自动进入下一轮抽奖。
+help_content_1_6	选出赢家后，系统可能需要30秒到几小时来完成自动支付并将资金转至赢家账户中。
+help_content_1_7	如需查看结果和统计数据，请去往“我的门票”，输入您用来购买门票的钱包地址。
+help_title_2	抽奖时间
+help_content_2	每24小时抽奖一次。每个彩票列表中头奖数额下方都有倒数计时器。
+help_title_3	彩票统计数据
+help_content_3	每次抽奖都有一个专属索引号（例：Draw 35）。您可以使用该号码在某个彩票的抽奖记录中查找相关统计数据。在主页上，点击您想查看的彩票，然后点击“抽奖记录”标签。下拉界面直至找到抽奖的索引编号以及抽奖的统计数据。
+help_title_4	如何查看
+help_content_4	处理彩票时，计时器将停止计时，主页上的彩票抽奖会显示“正在进行”。点击该彩票，然后点击“抽奖记录”选项，即可查看抽奖结果。
+help_title_5	赢家是如何选出的
+help_content_5	每次抽奖的中奖号码由一个随机数生成器（RNG）自动选择出，这个随机数生成器是基于区块链技术的。本$1中更详细的解释了我们的RNG的算法。如果您是开发人员，为我们提供RNG的智能合约开放供人访问，您可以在$2上进行检查。
+help_title_6	付款与结果
+help_content_6	系统将头奖奖金自动转入用于购买获奖彩票的加密钱包中。付款根据每张彩票的支付表在ETH中进行。请注意，在所有抽奖编号发布后，资金转移可能需要30秒到几个小时不等。彩票组织者将支付奖金付款的所有相关交易费用。抽奖和获取奖金的所有历史都在每张彩票的“抽奖档案”中，您还可以在“我的彩票”中查看您的获奖彩票。输入您用来购买彩票的加密钱包号码来查看相关结果。
+transparency_1	Fire Lotto 使用基于区块链的算法来选择中奖号码：
+transparency_2	中奖号码完全随机，并且无法提前获知中奖号码。
+transparency_3	没有人能够影响抽号的结果，即使是Fire Lotto的开发人员也无法影响。
+transparency_4	运作方式：
+transparency_5	抽奖结束一小时前，停止贩卖票券。
+transparency_6	在抽奖结束后，我们将提取比特币区块链中的第一个区块。
+transparency_7	无人能事先得知比特币区块哈希值。
+transparency_8	中奖号码来自于区块中的哈希值。
+transparency_9	请尝试：
+enter_bitcoin_hash	输入比特币区块哈希值（64个符号）
+4_bytes	4 bytes
+1_byte	1 byte
+transparency_10	算法的技术描述： $1。
+transparency_11	开放算法代码公布于 $1上。
+transparency_12	比特币区块号码在每次抽奖中都有具体说明，具体说明在“抽奖档案”中。
+transparency_13	在本页中，您能查询到比特币区块合规性的相关信息以及任何一次抽奖的号码。
+rules_lotto	$1 彩票规则
+rules_guessed_numbers	匹配数字
+rules_prize	奖项
+rules_prize_percent	奖池的$1 /有$2个数字匹配的玩家数量
+rules_participation	参与抽奖
+rules_participation_content	从您的彩票中选择1到$2中的$1个数字来参加抽奖，也可以点击魔棒图标让随机数字生成器为您选择数字。门票购买数量没有限制，但禁止使用自动软件工具购买彩票或填写彩票信息。
+rules_tickets_purchase	购买彩票
+rules_tickets_purchase_content	截至彩票发行日期，根据购票当天以太坊的平均汇率计算，一张彩票的价格约为2美元。票价可能在将来发生变化。
+rules_tickets_purchase_content2	玩家在以太坊用加密货币钱包购买彩票，以确保付款安全。玩家还必须支付“gas”费用（使用以太坊网络的交易费用）。使用以太坊购买一张彩票，玩家需要支付的平均GAS费用约为170,000。彩票奖金的转账费用由组织者承担。一旦购买，彩票不能退换。
+rules_distributions_funds	资金分配
+rules_distributions_funds_content	每张抽奖的彩票销售所得收益分配如下：70％进入奖池用于本次抽奖；15％用于广告、营销和法律支出； 10％作为手续费支付给FLOT代币持有者；5％用于支付彩票奖金转账的技术费用（gas费用）。
+rules_jackpot_content	.
+rules_jackpot_content2	根据截至当日的以太坊平均汇率，$1的Fire Lotto彩票头奖奖金保证最低至少有$2美元。如果头奖奖金低于保证的最低头奖金额，将用储备基金补偿差额。之后，所有原计划用于未来抽奖头奖奖金的资金将先被用来补充储备基金。最初的储备基金的资金来源为头奖奖金以及组织者提供的资金。
+rules_prize_pool	奖池
+rules_prize_pool_content	每次抽奖的奖池根据该次抽奖的70％的销售额计算。基于彩票中匹配号码的数量，根据以下图表分配奖池。
+prize_pool_distribution	奖池分配
+rules_prize_pool_content2	在第$1类中，总和除以该类别中的赢家人数。如果没有赢家，则将该金额总和转至下一次抽奖的头奖奖池中。
+rules_prize_pool_content3	.
+draw_rised_funds	一次抽奖的彩票销售量
+category_winners_count	类别赢家的数量
+rules_frequency	频率
+rules_frequency_content	每24小时举行一次抽奖。本次抽奖的时间在彩票上有显示。彩票在抽奖前1小时结束售卖。此后，任何购买的彩票将用于下一次抽奖。
+rules_pay_winnings	奖金支付
+rules_pay_winnings_content	抽奖后，系统会自动将以太坊中的奖金转账至用于购买该获奖彩票的加密货币钱包中。交易费用（gas费用）将以彩票的形式支付。将资金转移至获奖的加密货币钱包中需要30分钟到几个小时不等。
+rules_tax	税
+rules_tax_content	Fire Lotto不提供税务代理服务。获得奖金的加密货币钱包的所有者承担交税责任。
+rules_agreement	协议
+rules_agreement_content	参与彩票购买即代表您已同意相关彩票规则，并保证您年满18周岁，并/或满足您的居住国家购买彩票的法定最低年龄限制。
+next	下一个
+skip_tutor	跳过教程
+imtoken1_1	1.打开imToken应用程序
+imtoken1_2	2.选择你的ETH钱包
+imtoken1_3	3.点击“发送”按钮
+imtoken1_4	4.点击“高级”开关
+imtoken1_5	5.填写交易表格（所有字段均为必填项）：
+imtoken1_to_address	收货人地址
+imtoken1_amount	量
+imtoken1_gas_price	Gas Price
+imtoken1_gas_limit	Gas
+imtoken1_data	数据
+imtoken1_6	完成后，点击“下一步”。 然后点击“确认”按钮。
+imtoken1_7	交易完成后，门票将出现在$1中。
+imtoken1_8	胜利将自动归功于您的imToken钱包。

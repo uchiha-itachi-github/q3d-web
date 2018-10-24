@@ -1,0 +1,214 @@
+language	Language
+referral_bonus	Referral Bonus
+investors_plan	For Investors
+the	The
+round	Round
+lotto	Lotto
+per_round	Minutes per Round
+withdraw	Withdraw
+withdraw_verb_in	Withdraw
+deposit	Deposit
+bet	Bet
+win	Win
+history	History
+pending	Pending
+my-cash	My ETH
+send_cash_address	Send ETH to address to make deposit
+enter_amount	Please input amount to withdraw
+close	Close
+unknown_type	Unknown type
+lotto	Lottery
+my_tickets	My Tickets
+signin_signup	Sign In / Sign Up
+sign_in	Sign In
+sign_up	Sign Up
+sign_in_title	Sign In
+sign_up_title	Sign Up
+forgot_password	Forgot Password
+reset_password	Reset password
+reset	reset
+logout	Logout
+security	Security
+help	Help
+total_jackpot	Prize pool
+jackpot	Jackpot
+instant_lottery	Instant Lottery
+draw	Draw
+draw_n	Draw $1
+after_n	$1 time left
+buy_ticket_for	Buy ticket
+buy_agreement	Buying a ticket you acknowledge that you have read and agreed with the lottery rules.
+buy	Buy
+buy_for	Buy $1
+rules	Rules
+draw_archive	Draw archive
+back	Back
+no_draws	No draws
+no_tickets	No tickets
+active	Active
+played	Played
+enter_wallet	Enter your wallet address
+enter_wallet_hint	Please, enter your ETH wallet address (42 symbols)
+no_win	Win 0
+win_n	Won $1
+select_n_numbers	Select $1 numbers
+winners	Winners
+no_winners	No winners
+guess_n_numbers	Guess $1 numbers
+date	Date
+win_numbers	Win numbers
+collected	Collected
+paid	Paid
+to_jackpot	To Jackpot
+to_reserve	To Reserve
+reserve	Reserve
+for_investors	For Investors
+add_ticket	Add ticket
+remove_ticket	Remove ticket
+next_draw	Next draw
+draw_played	Draw $1 played!
+draw_played_win_numbers	Winning numbers:
+playing	Playing..
+community	Community:
+mail_us	Mail Us:
+how_to_play	How to play
+loading	Loading..
+payment_success	Payment was successfully completed
+payment_fail	Payment failed
+your_transaction_on_etherscan	Review transaction in Etherscan
+address	Address
+send_eth_to_address	Send ETH from your wallet to smart-contract address.
+while_sending_enter_data	While sending enter data:
+all_fields_required	All fields are required.
+tickets_will_appear	Tickets will appear in "My tickets" after the transaction is completed.
+transfer	Transfer
+support	Support
+cooperation	Cooperation
+payment_methods	Payment methods:
+manual_transfer	Transfer ETH to the smart-contract
+for_payment	Payment
+not_pay_from_exchanges	Do not make payment from exchanges.
+amount	Amount
+luckiest	High rollers
+for_all_time	To date
+amount_of_winnings	Total amount<br>awarded
+winning_tickets	Winning<br>tickets
+winning_jackpots	Grand jackpot<br>winners
+bitcoin_block_number	Bitcoin block<br>number
+transparency	Transparency
+enter_correct_hash	Enter correct hash
+partners	Partners
+to_address	To Address
+amount_to_send	Amount to<br>Send
+copied_to_clipboard	Copied to clipboard
+cant_copy	Can't copy
+copy_manually	Please select and copy manually
+gas_limit	Gas Limit
+gas_price	Gas Price
+tx_data	Data
+myetherwallet_will_opened_filled	The site myetherwallet.com with the filled transaction will be opened.
+login_into_wallet	Sign in to your wallet and complete the payment.
+first_payment	First payment?
+detailed_instruction	Detailed instruction
+pay_now	Pay now
+instruction	Instruction
+pay_myetherwallet	Pay with MyEtherWallet
+press_pay_now	1. Press button "Pay now"
+myetherwallet_will_opened	2. The site myetherwallet.com will be opened
+close_welcome_screen	3. Close welcome screen
+click_out_window	Click out of popup.
+sign_in_your_wallet	4. Sing in to your wallet
+sign_in_your_walle_any_variant	Any of the proposed methods.
+fields_are_filled	5. All fields are already filled in
+fields_are_filled_desc	Fire Lotto has already transferred all the necessary information about the payment.
+complete_payment	6. Complete transaction
+press_generate_transaction	Press button "Generate Transaction".
+press_send_transaction	Next press button "Send Transaction".
+check_my_tickets	7. Check "My Tickets"
+tickets	Tickets
+ticket_1	Ticket
+ticket_2	Tickets
+ticket_5	Tickets
+please_install_metamask	Please install MetaMask plugin:
+install_metamask	Install MetaMask
+login_metamask	Please login into MetaMask
+metamask_set_network	Please set Main Ethereum Network in MetaMask
+success	Success!
+metamask_complete	Tickets will appear in "My Tickets" after transaction is completed.
+help_title_1	How to play
+help_content_1_1	In order to purchase a ticket, you’ll need to have an Ethereum wallet. For help creating one, visit $1
+help_content_1_2	On the homepage, click on the lottery you wish to play. You will be taken to a ticket page where you can choose your own set of numbers or click on the magic wand icon to have the numbers randomly chosen for you. Once you’ve begun selecting numbers, the magic wand icon will be replaced by a trash can icon. Clicking on the trash can icon will remove your selected numbers and the magic wand will once again appear as an option.
+help_content_1_3	Once you’re satisfied with the number selection, click on the “buy” button to purchase your ticket. You will be prompted to either pay with MetaMask (a secure Chrome plugin that is recommended for use with myetherwallet.com) or to transfer funds directly from your Ethereum wallet to the lottery smart contract address (for more advanced users).
+help_content_1_4	After the purchase, if you’re still feeling lucky, go back and buy more tickets – there is no waiting period and no limit to the number of lottery tickets you can buy.
+help_content_1_5	For each lotto, the system will stop accepting new lottery tickets one hour before the draw. All tickets purchased after that time will be automatically transferred to the next drawing round.
+help_content_1_6	Once a winner is selected, the automated payout will take from 30 seconds to several hours for the system to transfer funds to the winning account.
+help_content_1_7	To view results and statistics, go to the “My tickets” section of the site and enter the address of the wallet that you used to purchase the tickets.
+help_title_2	Lottery timing
+help_content_2	Drawings are held every 24 hours. A countdown timer is shown below the jackpot amount on each lottery listing.
+help_title_3	Lottery statistics
+help_content_3	Each drawing has a unique index number (e.g., Draw 35). You can use that number to find its statistics in the draw archive for that specific lottery. On the homepage, simply click on the lottery you wish to view, and then click on the tab that says “Draw archive.” Scroll down until you see the index number of your drawing, and there you’ll find the statistics for that drawing.
+help_title_4	How to watch
+help_content_4	When a lottery is in progress, the timer will stop and the notification will say “Playing” on that lottery drawing on the homepage. If you click on that lottery and then the tab that says, “Draw archive,” you will see the results of the drawing as soon as they are available.
+help_title_5	How winners are selected
+help_content_5	The winning numbers for each lottery are automatically selected by a Random Number Generator (RNG) based on blockchain technology. The algorithm behind our RNG is explained in more detail in this $1. If you’re a developer, the smart contract that provides our RNG is open access and you can inspect it on $2.
+help_title_6	Payments and results
+help_content_6	The system automatically transfers jackpot funds to the crypto wallet that was used to buy tickets for the winning drawing. All payments are made in ETH according to the payment tables of each lottery. Note that the funds transfer can take from 30 seconds to a few hours after all drawing numbers have been posted. All transactional expenses for winnings payments are covered by the lottery organizer. The history of all drawings and winnings can be found in the “Draw archive” section of each lottery, and you can check your winning tickets in the “My tickets” section of the site. Simply enter the number of the crypto wallet that you used to purchase your tickets, and your results will appear.
+transparency_1	To select winning numbers Fire Lotto uses algorithm based on blockchain:
+transparency_2	The winning numbers are random and not known in advance.
+transparency_3	No one can influence the result of the draw, even the developers of Fire Lotto.
+transparency_4	How it works:
+transparency_5	An hour before the end of the draw, the purchase of tickets stops.
+transparency_6	We take first block of bitcoin blockchain after the time of the end of the draw.
+transparency_7	Bitcoin block hash is not known in advance.
+transparency_8	From the hash of the block we get the winning numbers.
+transparency_9	Try it yourself:
+enter_bitcoin_hash	Enter the bitcoin block hash (64 symbols)
+4_bytes	4 bytes
+1_byte	1 byte
+transparency_10	Technical description of the algorithm: $1.
+transparency_11	Open algorithm code is published on $1.
+transparency_12	Bitcoin block number is specified for each draw in "Draw archive".
+transparency_13	On this page you can check the compliance of the bitcoin block and numbers for any draw.
+rules_lotto	The $1 Lottery Rules
+rules_guessed_numbers	Numbers Matched
+rules_prize	Prize
+rules_prize_percent	$1 of the Prize Pool / The number of players who matched $2 numbers
+rules_participation	Participation
+rules_participation_content	To participate in the lottery, you need to choose $1 numbers from 1 to $2 in your lottery ticket, or select the magic wand icon to allow the random number generator to choose the numbers for you. The number of tickets that you can buy is almost unlimited. However, using automated software tools for buying tickets or filling them out is prohibited.
+rules_tickets_purchase	Ticket Purchase
+rules_tickets_purchase_content	As of the date of lottery launch, the price of one ticket is approximately USD $2 based on the average exchange rate to Ethereum on the day of ticket purchase. The ticket price may be changed in the future.
+rules_tickets_purchase_content2	Players pay for tickets in Ethereum using their cryptocurrency wallets. This ensures that all payments are safe. Players also have to pay for gas (a transaction fee for using the Ethereum network). The average amount of gas the player will have to pay for buying one lottery ticket using Ethereum is about GAS 170,000. The transactional costs of transferring lottery winnings are covered by the organizers. Once purchased, tickets cannot be exchanged or returned.
+rules_distributions_funds	Distribution of Funds
+rules_distributions_funds_content	Funds collected from ticket sales for each drawing are distributed as follows: 70% goes to the Prize Pool for the current drawing; 15% is used to cover advertising, marketing and legal expenses; 10% is paid in commissions to the holders of FLOT tokens; 5% are used to cover technical expenses (gas) for transferring lottery winnings.
+rules_jackpot_content	$1 of the Prize Pool (Category $2) are always rolled over to the jackpot pool for the following drawing. The jackpot built up over the previous drawings is divided between the owners of the tickets with $3 matching numbers. If there are no such tickets, the current jackpot is rolled over to the jackpot for the following drawing.
+rules_jackpot_content2	The $1 Fire Lotto lottery has a minimum guaranteed Jackpot of USD $2 in terms of the average exchange rate to Ethereum as of the current date. If the Jackpot won is less than the minimum guaranteed jackpot, the Reserve Fund will be used to compensate the difference. After that, all the funds intended to build up the jackpot for the following drawings will be first used to replenish the Reserve Fund. Initially, the Reserve Fund is funded from the amount of money collected for the Jackpot as well as funds contributed by the organizers.
+rules_prize_pool	Prize Pool
+rules_prize_pool_content	The Prize Pool for each drawing is calculated based on 70% of the ticket sales for that drawing. It is distributed according to the following chart depending on how many numbers are matched.
+prize_pool_distribution	Prize Pool Distribution
+rules_prize_pool_content2	In Categories $1, the sum is divided by the number of winners in the category. If there are no winners, the sum is rolled over to the Jackpot pool for the next drawing.
+rules_prize_pool_content3	This means that the amount of winnings for matching $1 numbers is calculated by the equation:
+draw_rised_funds	Ticket sales for one drawing
+category_winners_count	number of category winners
+rules_frequency	Frequency
+rules_frequency_content	Drawings are held every 24 hours. The time of the current drawing is indicated on the lottery ticket. Ticket sales end 1 hour before the drawing. After that time, any tickets purchased will be played in the following drawing.
+rules_pay_winnings	Payment of winnings
+rules_pay_winnings_content	After the drawing, the system automatically transfers the winnings in Ethereum to the cryptocurrency wallets that were used to purchase the winning tickets. Transaction fees (gas) will be paid at the expense of the lottery. It can take 30 minutes to several hours for the funds to be transferred to the winning cryptocurrency wallets.
+rules_tax	Taxes
+rules_tax_content	Fire Lotto does not act as a tax agent. The responsibility to pay taxes lies with the owner of the cryptocurrency wallet to which the winnings were transferred.
+rules_agreement	Agreement
+rules_agreement_content	By participating in the lottery, you agree to the lottery rules. By purchasing the lottery tickets, you guarantee that you are 18 years of age and/or you have reached the minimum age for legally participating in the lottery in your country of residence.
+next	Next
+skip_tutor	Skip Tutor
+imtoken1_1	1. Open imToken app
+imtoken1_2	2. Select your ETH wallet
+imtoken1_3	3. Click on the "Send" button
+imtoken1_4	4. Click on the switch that reads “advanced”
+imtoken1_5	5. Complete the transaction form (all fields are required):
+imtoken1_to_address	Receiver's<br>Address
+imtoken1_amount	Amount
+imtoken1_gas_price	Custom<br>Gas Price
+imtoken1_gas_limit	Custom Gas
+imtoken1_data	Data
+imtoken1_6	When you are done, click “Next”. Then hit the “Confirm” button.
+imtoken1_7	Tickets will appear in $1 after the transaction is completed.
+imtoken1_8	The win will automatically credit to your imToken wallet.

@@ -1,0 +1,1046 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;" />
+	<meta name="renderer" content="webkit">
+	<meta name="keywords" content="快3,快三,福彩快3,區塊鏈彩票,以太坊彩票,區塊鏈賭場,區塊鏈賭博,以太坊賭場,ether, ethereum,網絡掙錢,dice2,消極收益,簡單的掙錢方式, 如何在網絡掙錢, 智能合同, 加密貨幣, 賞金, 比特幣, 錢, pandemica, gorgona, 容易掙的錢, 投資基金會" />
+	<meta name="description" content="基於智能合約的區塊鏈彩票遊戲，無法被操縱，完全公平的彩票遊戲" />
+	<meta http-equiv="Cache-Control" content="no-transform" />
+
+	<title>快3_快三_快3網上購買_在線機選_購買_代購_合買-區塊鏈彩票</title>
+
+	<link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body class="">
+	<nav id="topNav">
+		<div id="topNavWrap">
+			<div id="topNavLeft">Welcome To <a href="http://lottery3.vip">LOTTERY3.VIP </a>
+
+
+			</div>
+			<ul id="topNavRight">
+				<li>
+					<a href="javascript:void(0);" id="eth_network_name">正在檢測MetaMask</a>
+					&nbsp;&nbsp;|
+				</li>
+				<li>
+					<i class="icon_approve_gold" v-show="isVip"></i>
+					<a id="eth_account_addr" href="javascript:;">正在檢測MetaMask</a>
+					&nbsp;&nbsp;
+				</li>
+				<li class="none">
+					<a id="my_balance"></a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div id="app">
+		<nav id="topTabBox">
+			<div id="topTab">
+				<ul id="funcTab">
+					<li pid="award"><a href="javascript:;" @click="myTicketsClick" data-locale="my_tickets">我的彩票</a>|</li>
+
+					<li pid="howto"><a href="javascript:show_agent_box()" data-locale="referral_bonus">邀请奖励</a>|</li>
+					<li pid="howto"><a href="javascript:show_invest_box()" data-locale="investors_plan">投资人计划</a></li>
+					<li id="lotteryListEntry"><a class="topNavHolder" hidefocus="true" rel="nofollow" data-locale="language">语言<i></i></a>
+						<div id="lotteryList" style="display: none; left: 0px;">
+							<div class="lotteryListWrap">
+								<ul>
+									<li class="zyGame ">
+										<a gid="jczq" href="./index.html">
+											<img src="img/en.svg" class="cz_logo35">English<span class="grayWords"></span></a></li>
+									<li class="zyGame ">
+										<a gid="jczq" href="./cn.html">
+											<img src="img/zh_man.svg" class="cz_logo35">简体<span class="grayWords"></span></a></li>
+									<li class="zyGame ">
+										<a gid="jczq" href="javascript:;">
+											<img src="img/zh_man.svg" class="cz_logo35">繁體<span class="grayWords"></span></a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<aside class="awardBody">
+			<strong><b class="iconHorn"></b></strong>
+			<ul class="clearfix scroll-list" data-info="PublishResult">
+				<li v-for="item in PublishResult">
+					第 <span class="c_ba2636">{{item.args._round | toParseInt}}</span> 期共有 <span class="c_ba2636">{{item.args._luckyusers
+						| toParseInt}}</span>
+					注中獎,共獲得獎勵
+					<span class="c_ba2636">{{item.args._amount | toAmount}}</span> ETH.
+				</li>
+			</ul>
+		</aside>
+		<article class="docBody clearfix" id="docBody">
+			<header class="game_header clearfix">
+				<div class="game_logo">
+					<div class="cz_logo kuai3">
+						<span>
+							<span data-locale="total_jackpot">獎池總金額</span></span>
+						<div id="pool_total_balance" style="font-size:30pt;"></div>
+						ETH
+					</div>
+
+
+					<p class="game_intro">
+						<span>20
+							<b data-locale="per_round">​​分鐘一期</b></span>
+					</p>
+				</div>
+				<div class="betting_countDown" id="countDownLeft">
+					<p class="bet_period">
+						距 <em class="c_ba2636" id="current_round">​​</em> 期購買截止還有：
+					</p>
+					<p class="countDownBox">
+						<span>--:--</span>
+					</p>
+					<p class="intro">以區塊時間為準</p>
+					<div class="tgTextWrap clearfix">
+						<ul>
+						</ul>
+					</div>
+				</div>
+				<div class="awardBox">
+					<div id="countDownRight">
+						<p class="bet_period">
+							第 <em class="c_ba2636" id="last_round">​​-</em> 期開獎號碼：<em class="c_ba2636" id="last_lucky_num">-</em>
+						</p>
+						<p class="awerdNum_balls fixBallPos"><em class="kuai3Ball nullData"></em><em class="kuai3Ball nullData"></em><em
+							 class="kuai3Ball nullData"></em></p>
+						<p class="awerdNum_other kjInfoBox">
+							和值：<em class="c_ba2636">-</em>&nbsp;&nbsp;
+							<i>形態：<em class="numType nt_small">-</em><em class="numType nt_dual">-</em></i>
+						</p>
+					</div>
+					<div id="trendLinks">
+						<a href="javascript:show_agent_box()">邀請新地址獎勵7%~18%</a>
+						<a href="javascript:show_invest_box()">分紅合約</a>
+					</div>
+					<div class="show_moreAwards" id="awardListBtn" onclick="$('#awardList').toggle();">
+						關於智能合約 <i class="openDetail"></i>
+					</div>
+				</div>
+			</header>
+			<section class="awardList">
+				<div id="awardList" class="hide">
+					<div>
+						<h1>彩票系統說明</h1>
+						<ul>
+							<li>1，這是一個使用Ethereum Smart Contract自動開獎的彩票遊戲，</li>
+							<li>2，彩票系統採用Ethereum智能合約接收購買和抽獎。 </li>
+							<li>3，為確保合約安全，合約會在合適的時候公開代碼。當前合約地址：</li>
+							<li>4，系統使用的SLT為Token持股合約，合約地址：0x2878d33523a8025b66bdf606c8670fdf3f4c8cdd</li>
+							<li>5，系統使用星際文件系統部署並永久運行。 </li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="main clearfix">
+				<div class="clearfix menuBox">
+					<ul class="gameMenu">
+						<li class="active"><a hidefocus="true" href="index.html">選號購買</a></li>
+					</ul>
+					<ul class="moreLink">
+						<li><a data-click="scroll" href="#awardTableInfo" title="快3玩法說明"><i class="gameIntru_icon"></i>玩法說明</a></li>
+					</ul>
+					<p>銷售時間：每天24小時銷售</p>
+				</div>
+				<section class="bettingBox">
+					<nav class="gameMenus">
+						<ul id="k3_tab">
+							<li name="hz" class="active"><strong>和值</strong> <em>獎勵：0.1-2.4
+									ETH</em></li>
+							<li name="3tx"><strong>三同號通選</strong> <em data-plus-game="3tx">獎勵：0.4 ETH</em></li>
+							<li name="3dx"><strong>三同號單選</strong> <em data-plus-game="3dx">獎勵：2.4 ETH</em>
+								<span class="tipPop"><i></i>獎勵高</span>
+							</li>
+							<li name="3bt"><strong>三不同號</strong> <em data-plus-game="3bt">獎勵：0.4
+									ETH</em></li>
+							<li name="3lt"><strong>三連號通選</strong> <em data-plus-game="3lt">獎勵：0.1 ETH</em></li>
+							<li name="2fx"><strong>二同號複選</strong> <em data-plus-game="2fx">獎勵：0.14</em></li>
+							<li name="2dx"><strong>二同號單選</strong> <em data-plus-game="2dx">獎勵：0.8 ETH</em></li>
+							<li name="2bt"><strong>二不同號</strong> <em data-plus-game="2bt">獎勵：0.08
+									ETH</em>
+								<span class="tipPop"><i></i>易中獎</span></li>
+							<li name="ryx" class="end kuai3_rand " style="display: none"><strong>猜1個號就中獎</strong><span></span>
+							</li>
+						</ul>
+					</nav>
+					<div id="mainPanels">
+						<div class="betBox hezhi " id="panl_hz">
+							<div class="title">
+								<h3>玩法提示：</h3>
+								至少選擇1個和值（3個號碼之和）進行購買，所选和值與開獎的3個號碼的和值相同即中獎，最高可中<em>2.4</em>ETH。 <i class="jtip questionMark" tip="#tip_hz"></i>
+							</div>
+
+							<div class="select_num">
+
+								<ul class="Blocksballs OneNum clearfix">
+									<li class="js_ball" data-value="3" data-eth="2.4"><em>3</em><span>獎勵<span style="color: #b12034">2.4 ETH</span></span></li>
+									<li class="js_ball" data-value="4" data-eth="0.8"><em>4</em><span>獎勵<span style="color: #b12034">0.8ETH</span></span></li>
+									<li class="js_ball" data-value="5" data-eth="0.4"><em>5</em><span>獎勵<span style="color: #b12034">0.4ETH</span></span></li>
+									<li class="js_ball" data-value="6" data-eth="0.24"><em>6</em><span>獎勵<span style="color: #b12034">0.24ETH</span></span></li>
+									<li class="js_ball" data-value="7" data-eth="0.16"><em>7</em><span>獎勵<span style="color: #b12034">0.16ETH</span></span></li>
+									<li class="js_ball" data-value="8" data-eth="0.12"><em>8</em><span>獎勵<span style="color: #b12034">0.12ETH</span></span></li>
+									<li class="js_ball" data-value="9" data-eth="0.1"><em>9</em><span>獎勵<span style="color: #b12034">0.1ETH</span></span></li>
+									<li class="js_ball" data-value="10" data-eth="0.08"><em>10</em><span>獎勵<span style="color: #b12034">0.08ETH</span></span></li>
+									<li class="js_ball" data-value="11" data-eth="0.08"><em>11</em><span>獎勵<span style="color: #b12034">0.08ETH</span></span></li>
+									<li class="js_ball" data-value="12" data-eth="0.1"><em>12</em><span>獎勵<span style="color: #b12034">0.1ETH</span></span></li>
+									<li class="js_ball" data-value="13" data-eth="0.12"><em>13</em><span>獎勵<span style="color: #b12034">0.12ETH</span></span></li>
+									<li class="js_ball" data-value="14" data-eth="0.16"><em>14</em><span>獎勵<span style="color: #b12034">0.16ETH</span></span></li>
+									<li class="js_ball" data-value="15" data-eth="0.24"><em>15</em><span>獎勵<span style="color: #b12034">0.24ETH</span></span></li>
+									<li class="js_ball" data-value="16" data-eth="0.4"><em>16</em><span>獎勵<span style="color: #b12034">0.4ETH</span></span></li>
+									<li class="js_ball" data-value="17" data-eth="0.8"><em>17</em><span>獎勵<span style="color: #b12034">0.8ETH</span></span></li>
+									<li class="js_ball" data-value="18" data-eth="2.4"><em>18</em><span>獎勵<span style="color: #b12034">2.4ETH</span></span></li>
+								</ul>
+
+								<div class="jiangBox jiajiangBox clearfix hide">
+									<span>加獎勵額</span>
+									<ul></ul>
+								</div>
+								<div class="OptimizeBox js-datas-con clearfix">
+
+									<ul class="Blocksballs clearfix"></ul>
+								</div>
+
+
+							</div>
+							<!-- <p class="selectInfo">
+									<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>元
+									</span>
+									</p> -->
+
+						</div>
+						<div class="betBox sthtx hide " id="panl_3tx">
+							<div class="title">
+								<h3>玩法提示：</h3>
+								對所有相同的三個號碼（111、222、333、444、555、666）進行購買，任意號碼開出即中獎，單註獎勵<em>0.4</em>ETH。 <i class="jtip questionMark" tip="#tip_3tx"></i>
+							</div>
+
+
+							<div class="select_num ">
+								<div class="Blocksballs sthtx_ball">
+									<em title="三同號通選" class="js_ball" data-value="1" data-eth="0.4">三同號通選</em>
+								</div>
+
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>元
+								</span>
+								</p> -->
+
+						</div>
+						<div class="betBox sbth hide " id="panl_3bt">
+
+							<div class="gameWrap putong">
+								<div class="title">
+									<h3>玩法提示：</h3>
+									從1～6中任選3個或多個號碼，所選號碼與開獎號碼的3個號碼相同即中獎，單註獎勵<em>0.4</em>ETH。 <i class="jtip questionMark" tip="#tip_3bt"></i>
+								</div>
+
+
+								<div class="select_num">
+									<ul class="Blocksballs OneNum clearfix">
+										<li class="js_ball" data-value="1"><em>1</em></li>
+										<li class="js_ball" data-value="2"><em>2</em></li>
+										<li class="js_ball" data-value="3"><em>3</em></li>
+										<li class="js_ball" data-value="4"><em>4</em></li>
+										<li class="js_ball" data-value="5"><em>5</em></li>
+										<li class="js_ball" data-value="6"><em>6</em></li>
+
+									</ul>
+
+								</div>
+								<!-- <p class="selectInfo">
+										<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+										</span>
+										</p> -->
+								<!--<div style="text-align:center">
+										<button style="height:40px;font-size:16pt;padding:5px" id="confirm_single_num">確認選號</button>
+										</div> -->
+							</div>
+
+						</div>
+						<div class="betBox slhtx hide " id="panl_3lt">
+							<div class="title">
+								<h3>玩法提示：</h3>
+								對所有3個相連的號碼（123、234、345、456）進行購買，任意號碼開出即中獎，單註獎勵<em>0.1</em>ETH。 <i class="jtip questionMark" tip="#tip_3lt"></i>
+							</div>
+
+
+							<div class="select_num ">
+								<div class="Blocksballs slhtx_ball">
+									<em title="三連號通選" class="js_ball" data-value="1">三連號通選</em>
+								</div>
+
+							</div>
+							<!-- <p class="selectInfo">
+												<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+												</span>
+												</p> -->
+
+						</div>
+						<div class="betBox ethfx hide " id="panl_2fx">
+							<div class="title">
+								<h3>玩法提示：</h3>
+								從11～66中任選1個或多個號碼，選號與獎號（包含11～66，不限順序）相同，即中獎<em>0.14</em>ETH。 <i class="jtip questionMark" tip="#tip_2fx"></i>
+							</div>
+
+
+							<div class="select_num">
+								<ul class="Blocksballs twoNum clearfix">
+									<li class="js_ball" data-value="1"><em>1</em><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em><em>6</em></li>
+
+								</ul>
+
+							</div>
+							<!-- <p class="selectInfo">
+														<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+														</span>
+														</p> -->
+
+						</div>
+						<div class="betBox ethdx hide " id="panl_2dx">
+							<div class="title">
+								<h3>玩法提示：</h3>
+								選擇1對相同號碼和1個不同號碼購買，選號與獎號相同（順序不限），即中獎<em>0.8</em>ETH。 <i class="jtip questionMark" tip="#tip_2dx"></i>
+							</div>
+
+
+							<div class="select_num">
+								<ul class="Blocksballs twoNum clearfix js_balls">
+									<li class="title">同號：</li>
+									<li class="js_ball" data-value="1"><em>1</em><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em><em>6</em></li>
+
+								</ul>
+								<ul class="Blocksballs twoNumBt js_balls clearfix">
+									<li class="title">不同號：</li>
+									<li class="js_ball" data-value="1"><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em></li>
+
+								</ul>
+							</div>
+							<!-- <p class="selectInfo">
+														<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+														</span>
+														</p> -->
+
+						</div>
+						<div class="betBox ebth hide " id="panl_2bt">
+
+							<div class="gameWrap putong">
+								<div class="title">
+									<h3>玩法提示：</h3>
+									從1～6中任選2個或多個號碼，所選號碼與開獎號碼任意2個號碼相同，即中獎<em>0.08</em>ETH。 <i class="jtip questionMark" tip="#tip_2bt"></i>
+								</div>
+								<div class="chartWrap hide "></div>
+
+								<div class="select_num">
+									<ul class="Blocksballs OneNum clearfix">
+										<li class="js_ball" data-value="1"><em>1</em></li>
+										<li class="js_ball" data-value="2"><em>2</em></li>
+										<li class="js_ball" data-value="3"><em>3</em></li>
+										<li class="js_ball" data-value="4"><em>4</em></li>
+										<li class="js_ball" data-value="5"><em>5</em></li>
+										<li class="js_ball" data-value="6"><em>6</em></li>
+
+									</ul>
+
+								</div>
+								<!-- <p class="selectInfo">
+														<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>元
+														</span>
+														</p> -->
+
+							</div>
+
+						</div>
+						<div class="betBox ryhm hide " id="panl_ryx">
+							<div class="title">
+								<h3>玩法提示：</h3>
+								選擇1個您認為一定會開出的號碼，系統將智能為您篩選出包含該號碼的單選號碼組合。
+							</div>
+
+
+							<div class="select_num">
+								<ul class="Blocksballs OneNum clearfix">
+									<li class="js_ball" data-value="1"><em>1</em></li>
+									<li class="js_ball" data-value="2"><em>2</em></li>
+									<li class="js_ball" data-value="3"><em>3</em></li>
+									<li class="js_ball" data-value="4"><em>4</em></li>
+									<li class="js_ball" data-value="5"><em>5</em></li>
+									<li class="js_ball" data-value="6"><em>6</em></li>
+
+								</ul>
+								<p class="game_intro c_727272 hide js_filter_info" id="k3_ryx_txt">
+									<span>只要開出</span>&nbsp;&nbsp;<strong class="c_ba2636">2</strong>&nbsp;&nbsp;即中獎，獎勵&nbsp;&nbsp;<strong class="c_ba2636">0.4-2.4
+									</strong>&nbsp;&nbsp;ETH<span>，您可以使用<a id="k3_ryx_filter" class="js_filter" href="javascript:void(0)">形態篩選</a>，刪除不需要的單註號碼
+									</span>
+								</p>
+
+							</div>
+							<!-- <p class="selectInfo">
+								<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+								</span>
+								</p> -->
+
+						</div>
+
+
+
+						<div class="screenDialog hide">
+							<dl class="titleBox clearfix">
+								<dt>選號形態過濾：</dt>
+								<dd>
+									<ul class="Blocksballs clearfix">
+										<li class="diceNum num1">1</li>
+										<li class="diceNum num2">1</li>
+										<li class="diceNum num3">1</li>
+									</ul>
+								</dd>
+							</dl>
+							<div class="numFromBox">
+								<h3>點擊選擇刪除對應形態號碼</h3>
+								<dl class="numfromlist clearfix">
+									<dt>已包含號碼形態：</dt>
+									<dd>
+										<ul class="Blocksballs clearfix">
+											<li class="NumFrom">1</li>
+											<li class="NumFrom">1</li>
+											<li class="NumFrom">1</li>
+										</ul>
+									</dd>
+								</dl>
+								<div class="sumNumFromBox clearfix">
+									<dl class="sumNumFromBox_hezhi">
+										<dt>已包含和值：</dt>
+										<dd>
+											<ul class="Blocksballs clearfix">
+												<li class="sumNum">1</li>
+												<li class="sumNum">2</li>
+												<li class="sumNum">3</li>
+											</ul>
+										</dd>
+									</dl>
+									<dl class="sumNumFromBox_xingtai">
+										<dt>和值形態：</dt>
+										<dd>
+											<ul class="Blocksballs clearfix">
+												<li class="sumFromNum_active">大</li>
+												<li class="sumFromNum">小</li>
+												<li class="sumFromNum">單</li>
+												<li class="sumFromNum">雙</li>
+											</ul>
+										</dd>
+									</dl>
+								</div>
+								<div class="NumDetail">
+									<h3>號碼組合</h3>
+									<div class="NumDetail_list clearfix">
+										<span><em>1</em><em>1</em><em>1</em><i></i></span><span><em>2</em>
+											< em>2</em><em>2</em><i></i>
+										</span><span><em>3</em><em>3</em><em>3< /em> <i></i></span><span class="delect"><em>4</em><em>4</em><em>4</em><i></i></span><span><em>1</
+												 em><em>1</em><em>1</em><i></i></span><span><em>1</em><em>1</em><em>1</em><i></i></span><span><em>1</em><em>1</em><em>1</em><i></i></span><span><em>1</em><em>1</em><em>1</em><i></i></span><span><em>1
+											</em><em>1</em><em>1</em><i></i></span><span><em>1</em><em>1</em> <em>1</em><i></i></span><span><em>1</em><em>1</em><em>1</em><i>
+												< /i> </span> </div> </div> </div> <div>
+													<!-- <p class="selectInfo">
+								<span>您選中了<strong class="c_ba2636">0</strong>注，共<strong class="c_ba2636">0</strong>ETH
+								</span>
+								</p> -->
+
+													<p class="btn_box">
+														<a href="javascript:;" class="numfrom_betbtn" title="添加到購買列表"></a><a href="javascript:;" title="放棄" class="numfrom_cancelBtn"></a>
+													</p>
+									</div>
+								</div>
+							</div>
+							<span id="tip_hz" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">8</span><br /> 開獎：<span class="c_ba2636">1
+									3 4</span><br /> 中獎：<span class="c_ba2636">0.12<span data-plus-game="hz" data-key="12"></span>ETH
+								</span> </span> <span id="tip_3tx" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">三同號通選</span><br /> 開獎：<span class="c_ba2636">1 1 1</span><br /> 中獎：<span class="c_ba2636">0.4<span
+									 data-plus-game="3tx"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三同號通選</span><br /> 開獎：<span class="c_ba2636">2 2 2</span><br /> 中獎： <span class="c_ba2636">0.4<span
+									 data-plus-game="3tx"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三同號通選</span><br /> 開獎：<span class="c_ba2636">3 3 3</span><br /> 中獎： <span class="c_ba2636">0.4<span
+									 data-plus-game="3tx"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三同號通選</span><br /> 開獎：<span class="c_ba2636">4 4 4</span><br /> 中獎： <span class="c_ba2636">0.4<span
+									 data-plus-game="3tx"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三同號通選</span><br /> 開獎：<span class="c_ba2636">5 5 5</span><br /> 中獎： <span class="c_ba2636">0.4<span
+									 data-plus-game="3tx"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三同號通選</span><br /> 開獎：<span class="c_ba2636">6 6 6</span><br /> 中獎： <span class="c_ba2636">0.4<span
+									 data-plus-game="3tx"></span>ETH
+								</span> </span> <span id="tip_3dx" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">1 1 1</span><br /> 開獎：<span class="c_ba2636">1 1 1</span><br /> 中獎：<span class="c_ba2636 ">2.4<span
+									 data-plus-game="3dx"></span>ETH
+								</span> </span> <span id="tip_3bt" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">2 4 6</span><br /> 開獎：<span class="c_ba2636">2 4 6</span><br /> 中獎：<span class="c_ba2636 ">0.4<span
+									 data-plus-game="3bt"></span>ETH
+								</span> </span> <span id="tip_3lt" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">三連號通選</span><br /> 開獎：<span class="c_ba2636">1 2 3</span><br /> 中獎：<span class="c_ba2636">0.1<span
+									 data-plus-game="3lt"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三連號通選</span><br /> 開獎：<span class="c_ba2636">2 3 4</span><br /> 中獎： <span class="c_ba2636">0.1<span
+									 data-plus-game="3lt"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三連號通選</span><br /> 開獎：<span class="c_ba2636">3 4 5</span><br /> 中獎： <span class="c_ba2636">0.1<span
+									 data-plus-game="3lt"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">三連號通選</span><br /> 開獎：<span class="c_ba2636">4 5 6</span><br /> 中獎： <span class="c_ba2636">0.1<span
+									 data-plus-game="3lt"></span>ETH
+								</span><br /> </span> <span id="tip_2fx" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">1 1</span><br /> 開獎：<span class="c_ba2636">1
+									1 2</span><br /> 中獎：<span class="c_ba2636">0.15<span data-plus-game="2fx"></span>ETH
+								</span><br />
+								<br /> 號：<span class="c_ba2636">2 2</span><br /> 開獎：<span class="c_ba2636">1 2 2</span><br /> 中獎：<span class="c_ba2636">0.15<span
+									 data-plus-game="2fx"></span>ETH
+								</span> </span> <span id="tip_2dx" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：同號<span class="c_ba2636"> 1 1</span> 不同號<span class="c_ba2636">
+									3</span><br /> 開獎：<span class="c_ba2636">1 1 3</span><br /> 中獎：<span class="c_ba2636">0.8<span data-plus-game=" 2dx"></span>ETH
+								</span><br />
+								<br /> 號：同號<span class="c_ba2636"> 2 2</span> 不同號<span class="c_ba2636"> 1</span><br /> 開獎：<span class="c_ba2636">2
+									2 1</span><br /> 中獎：<span class="c_ba2636">0.8<span data-plus-game="2dx"></span>ETH
+								</span> </span> <span id="tip_2bt" class="jtipWraper hide"><i></i> <strong>示例：</strong><br />
+								號：<span class="c_ba2636">1 2</span><br /> 開獎：<span class="c_ba2636">1
+									2 3</span><br /> 中獎：<span class="c_ba2636">0.8<span data-plus-game="2bt"></span>ETH
+								</span> </span>
+							<p class="selectInfo"><span>您選中了<strong class="c_ba2636">{{selectBetNum | toParseInt}}</strong>注 <strong class="c_ba2636">{{betMul
+										| toParseInt}}</strong>倍，共<strong class="c_ba2636">{{selectOnceNum | toFix(2)}}</strong>ETH
+									<span class="c_727171" v-show="selectGain">若中獎，獎勵<strong class="c_ba2636"> {{selectBonusResult | toFix(2)}}
+										</strong>ETH，盈利<strong class="c_ba2636"> {{selectGain | toFix(2)}} </strong>ETH</span></span></p>
+							<div style="text-align: center; margin: 30px;">
+								<span style="height: 50px; font-size: 18pt;" id="my_number"></span>
+								<input id="my_number_1" type="hidden">
+								<input id="my_number_2" type="hidden">
+								<input id="my_number_3" type="hidden">
+								<input id="my_number_type" type="hidden">
+							</div>
+							<div class="betresult">
+								<span class="holderWrapLeft">共<strong class="betNumCount">1</strong>注，
+								</span>
+								<span class="beiNumWrap">我要買
+									<span class="addSubtract">
+										<a href="javascript:;" rel="nofollow" hidefocus="true" class="subtract" @click="subtractMul"></a>
+										<input type="tel" v-model.lazy="betMul" id="betNum" @change="checkMul" />
+										<a href="javascript:;" rel="nofollow" hidefocus="true" class="add" @click="addMul"></a>
+									</span>倍(最多{{maxBetMul}}倍)，
+								</span>
+								<span class="holderWrapRight">共<strong class="betMoneyCount">{{0.02 * betMul | toFix(2)}}</strong>ETH&nbsp;
+								</span>
+							</div>
+							<center>
+								<button class="btn_bet disabled">立即參與</button>
+							</center>
+							<div class="moreOperate clearfix">
+								<div class="moreOperate_con">
+									<div id="zhuihaoWrap" class="hide">
+										<div class="loadingData">數據加載中，請稍候&hellip;</div>
+									</div>
+									<div id="groupbuyWrap" class="hide">
+										<div class="loadingData">數據加載中，請稍候&hellip;</div>
+									</div>
+								</div>
+							</div>
+							<div class="betBtnBox"></div>
+							<div class="bottomBox flex-box">
+								<div class="flex-item">
+									<h3>
+										最新購買 <b class="iconHorn"></b>
+									</h3>
+									<ul class="helpContent scroll-list" style="display: block" data-info="betArr">
+										<!-- TODO 輪動給出中獎信息 -->
+										<li v-cloak v-for="item in betArr">
+											[第<span class="c_ba2636">{{item.args.round | toParseInt}}</span>期]
+											{{item.args._addr}} 投了
+											<span class="c_ba2636">{{item.args._mul | toParseInt}}</span> 倍</li>
+									</ul>
+								</div>
+								<div class="flex-item">
+									<h3>
+										最新中獎 <b class="iconHorn"></b>
+									</h3>
+									<ul class="helpContent scroll-list" data-info="LuckyGuyArr" style="display: block">
+										<!-- TODO 輪動給出中獎信息 -->
+										<li v-cloak v-for="item in LuckyGuyArr">
+											[第<span class="c_ba2636">{{item.args._round | toParseInt}}</span>期]
+											{{item.args._addr}},<span class="c_ba2636">{{LottoTypeName[item.args._type]}}
+												{{item.args._n1>0?item.args._n1:'' | toParseInt}} {{item.args._n2>0?item.args._n2:''
+												| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</span>,獲得獎勵<span class="c_ba2636">{{item.args._amount
+												| toAmount}}</span>ETH</li>
+									</ul>
+								</div>
+							</div>
+							<div class="bottomBox" id="todayKaiJiang">
+								<h3>
+									<strong>最近90期開獎號碼</strong>
+									<span class="more"><em>收起</em><b>展開</b><i class="closeIcon"></i><i class="openIcon"></i>
+										< /span> </h3> <div class="helpContent">
+											<table width="33.33%" border="0" cellspacing="0" class="winnerNum_table">
+												<thead>
+													<tr>
+														<th width="5%" class="period">期號</th>
+														<th width="8%">開獎號碼</th>
+														<th width="5%">和值</th>
+														<th width="7%">形態</th>
+													</tr>
+												</thead>
+												<tbody>
+													<template v-for="(item,index) in betResultReverse" v-if="index %3 ==0">
+														<tr :class="index%2===1 && 'bg_f7f7f7'">
+															<td class="period">{{item.args._round | toParseInt}}</td>
+															<td class="awardTd">{{item.args._n1>0?item.args._n1:'' | toParseInt}}
+																{{item.args._n2>0?item.args._n2:''
+																| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</td>
+															<td>{{parseInt(item.args._n1) + parseInt(item.args._n2) + parseInt(item.args._n3)}}</td>
+															<td :class="'color-state-'+numberType(parseInt(item.args._n1) , parseInt(item.args._n2) ,
+							parseInt(item.args._n3))">{{numberInform(parseInt(item.args._n1)
+																, parseInt(item.args._n2) ,
+																parseInt(item.args._n3))}}</td>
+														</tr>
+													</template>
+												</tbody>
+											</table>
+											<table width="33.33%" border="0" cellspacing="0" class="winnerNum_table">
+												<thead>
+													<tr>
+														<th width="5%" class="period">期號</th>
+														<th width="8%">開獎號碼</th>
+														<th width="5%">和值</th>
+														<th width="7%">形態</th>
+													</tr>
+												</thead>
+												<tbody>
+													<template v-for="(item,index) in betResultReverse" v-if="index % 3 == 1">
+														<tr :class="index%2===0 && 'bg_f7f7f7'">
+															<td class="period">{{item.args._round | toParseInt}}</td>
+															<td class="awardTd">{{item.args._n1>0?item.args._n1:'' | toParseInt}}
+																{{item.args._n2>0?item.args._n2:''
+																| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</td>
+															<td>{{parseInt(item.args._n1) + parseInt(item.args._n2) + parseInt(item.args._n3)}}</td>
+															<td :class="'color-state-'+numberType(parseInt(item.args._n1) , parseInt(item.args._n2) ,
+							parseInt(item.args._n3))">{{numberInform(parseInt(item.args._n1)
+																, parseInt(item.args._n2) ,
+																parseInt(item.args._n3))}}</td>
+														</tr>
+													</template>
+												</tbody>
+											</table>
+											<table width="33.33%" border="0" cellspacing="0" class="winnerNum_table">
+												<thead>
+													<tr>
+														<th width="5%" class="period">期號</th>
+														<th width="8%">開獎號碼</th>
+														<th width="5%">和值</th>
+														<th width="7%">形態</th>
+													</tr>
+												</thead>
+												<tbody>
+													<template v-for="(item,index) in betResultReverse" v-if="index %3 ==2">
+														<tr :class="index%2===1 && 'bg_f7f7f7'">
+															<td class="period">{{item.args._round | toParseInt}}</td>
+															<td class="awardTd">{{item.args._n1>0?item.args._n1:'' | toParseInt}}
+																{{item.args._n2>0?item.args._n2:''
+																| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</td>
+															<td>{{parseInt(item.args._n1) + parseInt(item.args._n2) + parseInt(item.args._n3)}}</td>
+															<td :class="'color-state-'+numberType(parseInt(item.args._n1) , parseInt(item.args._n2) ,
+							parseInt(item.args._n3))">{{numberInform(parseInt(item.args._n1)
+																, parseInt(item.args._n2) ,
+																parseInt(item.args._n3))}}</td>
+														</tr>
+													</template>
+												</tbody>
+											</table>
+							</div>
+						</div>
+
+						<div class="bottomBox" id="awardTableInfo">
+							<h3>
+								<strong>獎勵計算說明</strong>
+								<!--<span class="more"><em>收起</em><b>展開</b><i class="closeIcon"></i><i class="openIcon">< /i></span> -->
+							</h3>
+							<div class="helpContent" style="display: block">
+								<table id="gameAwardIntro_con" class="prizeIntro_table">
+									<thead>
+										<tr>
+											<th width="20%">購買方法</th>
+											<th>開獎號碼（不排序）</th>
+											<th width="15%">購買號數</th>
+											<th width="20%">中獎勵額(元)</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>和值3</td>
+											<td>111</td>
+											<td bgcolor="#fff3da">三同號單選</td>
+											<td>0.24 ETH</td>
+										</tr>
+										<tr>
+											<td>和值4</td>
+											<td>112</td>
+											<td>全選</td>
+											<td>0.8 ETH</td>
+										</tr>
+										<tr>
+											<td>和值5</td>
+											<td>113、122</td>
+											<td>全選</td>
+											<td>0.4 ETH</td>
+										</tr>
+										<tr>
+											<td>和值6</td>
+											<td>114、123、222</td>
+											<td>全選</td>
+											<td>0.24 ETH</td>
+										</tr>
+										<tr>
+											<td>和值7</td>
+											<td>115、124、133、223</td>
+											<td>全選</td>
+											<td>0.16 ETH</td>
+										</tr>
+										<tr>
+											<td>和值8</td>
+											<td>116、125、134、224、233</td>
+											<td>全選</td>
+											<td>0.12 ETH</td>
+										</tr>
+										<tr>
+											<td>和值9</td>
+											<td>126、135、144、225、234、333</td>
+											<td>全選</td>
+											<td>0.1 ETH</td>
+										</tr>
+										<tr>
+											<td>和值10</td>
+											<td>136、145、226、235、244、334</td>
+											<td>全選</td>
+											<td>0.08 ETH</td>
+										</tr>
+										<tr>
+											<td>和值11</td>
+											<td>146、155、236、245、335、344</td>
+											<td>全選</td>
+											<td>0.08 ETH</td>
+										</tr>
+										<tr>
+											<td>和值12</td>
+											<td>156、246、255、336、345、444</td>
+											<td>全選</td>
+											<td>0.1 ETH</td>
+										</tr>
+										<tr>
+											<td>和值13</td>
+											<td>166、256、346、355、445</td>
+											<td>全選</td>
+											<td>0.12 ETH</td>
+										</tr>
+										<tr>
+											<td>和值14</td>
+											<td>266、356、446、455</td>
+											<td>全選</td>
+											<td>0.16 ETH</td>
+										</tr>
+										<tr>
+											<td>和值15</td>
+											<td>366、456、555</td>
+											<td>全選</td>
+											<td>0.24 ETH</td>
+										</tr>
+										<tr>
+											<td>和值16</td>
+											<td>466、556</td>
+											<td>全選</td>
+											<td>0.4 ETH</td>
+										</tr>
+										<tr>
+											<td>和值17</td>
+											<td>566</td>
+											<td>全選</td>
+											<td>0.8 ETH</td>
+										</tr>
+										<tr>
+											<td>和值18</td>
+											<td>666</td>
+											<td bgcolor="#fff3da">三同號單選</td>
+											<td>2.4 ETH</td>
+										</tr>
+										<tr>
+											<td bgcolor="#fff3da">三同號通選</td>
+											<td rowspan="2" bgcolor="#fff3da">111、222、333、444、555、666</td>
+											<td bgcolor="#fff3da">全選</td>
+											<td bgcolor="#fff3da">0.4 ETH</td>
+										</tr>
+										<tr>
+											<td bgcolor="#fff3da">三同號單選</td>
+											<td bgcolor="#fff3da">選一個</td>
+											<td bgcolor="#fff3da">2.4 ETH</td>
+										</tr>
+										<tr>
+											<td>二同號複選</td>
+											<td>11*、22*、33*、44*、55*、66*</td>
+											<td>選一個</td>
+											<td>0.14 ETH</td>
+										</tr>
+										<tr>
+											<td bgcolor="#fff3da">二同號單選</td>
+											<td bgcolor="#fff3da">112、113、114、115、116、122、223、224、225、226、133、233、334、335、336、144、244、344、445、446、155
+												、255、355、455、556、166、266、366、466、566</td>
+											<td bgcolor="#fff3da">選一個</td>
+											<td bgcolor="#fff3da">0.4 ETH</td>
+										</tr>
+										<tr>
+											<td>三不同號</td>
+											<td>123、124、125、126、134、135、136、145、146、156、234、235、236、245、246、256、345、346、356、456</td>
+											<td>選一個</td>
+											<td>0.4 ETH</td>
+										</tr>
+										<tr>
+											<td bgcolor="#fff3da">二不同號</td>
+											<td bgcolor="#fff3da">12*、13*、14*、15*、16*、23*、24*、25*、26*、34*、35*、36*、45*、46* 、56*</td>
+											<td bgcolor="#fff3da">選一個</td>
+											<td bgcolor="#fff3da">0.08 ETH</td>
+										</tr>
+										<tr>
+											<td>三連號通選</td>
+											<td>123、234、345、456</td>
+											<td>全選</td>
+											<td>0.1 ETH</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+				</section>
+			</section>
+		</article>
+		<!--<script src="../../js/queryAwardConfig.js"></script> -->
+
+		<div class="mask hide"></div>
+		<!--代理返币-->
+		<div class="iDialog dialog agent_dialog hide" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>代理獎勵計劃</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" data-click="dialogClose"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain" style="height: auto;">
+										<div style="font-size:12px">
+											<p>1，通過專屬推薦鏈接進入的新的地址，將和推薦人終身綁定。 </p>
+											<p>2，新地址的每一次購買，推薦人將獲得7%~18%不等的獎勵，實時轉入到代理的錢包地址。 </p>
+											<p>3，返現規則是寫入到智能合約的，無法被更改，會立即支付。 </p>
+											<p>4，推薦人根據業績或者購買VIP身份，分別獎勵如下：</p>
+											<p>4.1 新推薦人鏈接可獲得用戶消費的 5% 作為獎勵</p>
+											<p>4.2 業績達到 10 ETH 可獲得用戶消費的 7% 作為獎勵 </p>
+											<p>4.3 業績達到 30 ETH 可獲得用戶消費的 10% 作為獎勵 </p>
+											<p>4.4 業績達到 100 ETH 可獲得用戶消費的15% 作為獎勵 </p>
+											<p>5，除此之外，我們也為高級推薦人開通了付費獲取資格的通道。如果您想直接得到18%的用戶消費獎勵，請 <a href="javascript:Account.buy_agent()" class="c_ba2636">點擊此處支付50
+													ETH</a>，智能合約會立即賦予該地址高級推薦人資格，通過該推薦地址進入的消費，每一筆可以得到18%的獎勵</p>
+										</div>
+										<div style="text-align:center">
+											<p id="my_ref_agent_link" class="c_ba2636">{{myRefAgentLink}}</p>
+											<a href="javascript:;" data-click="copy" :data-clipboard-text="myRefAgentLink">點擊複製鏈接</a>
+										</div>
+									</div>
+								</div>
+								<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" data-click="dialogClose"><span>確定</span></a></
+									 div>
+								</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 投资人计划 -->
+		<div class="iDialog dialog invest_dialog hide" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>分紅投資計劃</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" data-click="dialogClose"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain" style="height: auto;">
+										<div style="font-size:12px">
+											<p>1，分紅合約是智能彩票合約的股東合約，合約代幣為SLT（Share of Lottery Token）</p>
+											<p>2，智能彩票扣除彩票獎勵、推薦獎勵外，不定時將利潤轉入分紅合約。 </p>
+											<p>3，分紅合約在合約餘額大於10ETH的時候，最短每天執行一次分紅。分紅會按照SLT均攤為每股收益，自動將ETH轉入到持有人的以太坊錢包。 </p>
+											<p>4，1 SLT = 0.1 ETHER</p>
+											<p>5，SLT 初始發行量1,000,000 SLT</p>
+											<p>6，SLT 初始增發流通股為200,000 SLT，達到後分紅合約停止接收ETH購買。 </p>
+											<p>7，當前合約已分紅<span id="total_share"> </span> ETH
+												<p>8，當前已銷售<span id="slt_sold"></span> SLT，剩餘<span id="slt_left"></span> SLT</p>
+										</div>
+										<div>
+											請輸入購買量<input id="slt_count" type="tel" pattern="\d+" v-model="sltNum" @change="checkNum('sltNum')"> <span id="slt_price">{
+												{sltPrice
+												| toFix(2)}}</span> ETHER
+										</div>
+										<div style="margin-top:10px;text-align:center">
+											<button id="buy_slt" class="buy_slt-btn">購買</button>
+										</div>
+									</div>
+								</div>
+								<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" data-click="dialogClose"><span>確定</span></a></
+									 div>
+								</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<!-- 我的彩票 -->
+		<div class="iDialog my_tickes" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;"
+		 v-show="isMyTicketsShow">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>我的彩票</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" @click="dialogClose('isMyTicketsShow')"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain">
+										<div style="font-size:12px">
+											<p v-for="item in myTickets">
+												第 <span class="c_ba2636">{{item.args.round | toParseInt}}</span> 期 :
+												{{LottoTypeName[item.args._type]}}
+												<span class="c_ba2636">{{item.args._n1>0?item.args._n1:'' | toParseInt}} {{item.args._n2>0?item.args._n2:''
+													| toParseInt}} {{item.args._n3>0?item.args._n3:'' | toParseInt}}</span>, 購買
+												<span class="c_ba2636">{{item.args._mul | toParseInt}}倍</span>
+											</p>
+										</div>
+									</div>
+									<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" @click="dialogClose('isMyTicketsShow')"><span>確定</span></
+											 a>
+									</div>
+								</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="iDialog" style="display:none;z-index: 10003; width: 430px; left: 50%; top: 50%; margin-top: -102.5px; margin-left: -215px;"
+		 id="iDialog1" v-show="isDialogShow">
+			<table class="iDialogWrapTable">
+				<tbody>
+					<tr>
+						<td class="itd-top-left"></td>
+						<td class="itd-top-center"></td>
+						<td class="itd-top-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-mid-left"></td>
+						<td class="itd-mid-center">
+							<div class="iDialogContent">
+								<div class="iDialogHead" style="cursor: move;">
+									<h1>{{dialogTitle}}</h1>
+								</div><a class="iDialogClose" hidefocus="true" href="javascript:;" @click="dialogDisplay(false)"></a>
+								<div class="iDialogBody">
+									<div class="iDialogMain" style="height: auto;">
+										<div style="font-size:12px">
+											<span v-cloak v-html="dialogMsg"></span>
+											<!-- <p style="margin:10px 0 0 0;"><span class="c_ba2636 endTime">{{dialogCloseCountdown}}</span>秒後將自動關閉</p> -->
+										</div>
+									</div>
+								</div>
+								<div class="iDialogFoot"><a href="javascript:;" rel="1" class="iDialogBtn focusBtn" @click="dialogDisplay(false)"><span>確定</span></a>
+								</div>
+							</div>
+						</td>
+						<td class="itd-mid-right"></td>
+					</tr>
+					<tr>
+						<td class="itd-bot-left"></td>
+						<td class="itd-bot-center"></td>
+						<td class="itd-bot-right"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<center>
+		<a href="mailto:uchiha-itachi@mail.com">Mail to us</a>
+		<br/>
+		<a href="https://twitter.com/lottery35">Tweet</a>
+	</center>
+	<script src="plugins/jquery.js"></script>
+	<script src="plugins/vue.js"></script>
+	<script src="plugins/plugins.js"></script>
+	<script>
+		var language = 'zh_can';
+	</script>
+	<script src="js/main.js"></script>
+</body>
+
+
+</html>

@@ -1,0 +1,188 @@
+
+lotto	彩券
+my_tickets	我的彩券
+security	安全性
+help	幫助
+total_jackpot_firelotto	FIRELOTTO 獎池
+total_jackpot	獎池
+jackpot	頭獎
+instant_lottery	即時抽獎
+draw	抽獎
+draw_n	$1抽獎
+after_n	$1剩餘時間
+buy_ticket_for	購買彩券
+buy_agreement	購買彩券即代表您已閱讀并同意我們的彩券相關規則。
+buy	購買
+buy_for	$1購買
+rules	規則
+draw_archive	抽獎記錄
+back	回到上一級
+no_draws	無抽獎
+no_tickets	無彩票
+active	有效
+played	已使用
+enter_wallet	輸入您的錢包地址
+enter_wallet_hint	請輸入您的ETH錢包地址（42位）
+no_win	贏0
+win_n	贏得$1
+select_n_numbers	選擇$1數字
+winners	贏家
+no_winners	無贏家
+guess_n_numbers	猜測$1數字
+date	日期
+win_numbers	贏取數字
+collected	已收藏
+paid	已付款
+to_jackpot	去往頭獎
+to_reserve	預定
+reserve	預定
+for_investors	投資者
+add_ticket	添加彩券
+remove_ticket	刪除彩券
+next_draw	下一個抽獎
+draw_played	$1抽獎已完成！
+draw_played_win_numbers	贏家數字：
+playing	正在抽獎..
+community	社團：
+mail_us	給我們發郵件：
+how_to_play	如何參加
+loading	正在加載..
+payment_success	付款成功
+payment_fail	付款失敗
+your_transaction_on_etherscan	查看Etherscan上的轉賬記錄
+address	地址
+send_eth_to_address	將您錢包中的ETH發送至智能錢包地址
+while_sending_enter_data	發送時請輸入相關信息：
+all_fields_required	需填寫所有信息
+tickets_will_appear	轉賬完成后，可以在“我的彩券”中找到所有的彩券。
+transfer	轉賬
+support	支持
+cooperation	合作
+payment_methods	付款方式：
+manual_transfer	将ETH轉賬至智能合約
+for_payment	付款
+not_pay_from_exchanges	請勿用交易付款
+amount	數值
+luckiest	大豪客
+for_all_time	直至今天
+amount_of_winnings	獲取中獎<br>金額
+winning_tickets	贏取<br>彩券
+winning_jackpots	大頭獎<br>贏家
+bitcoin_block_number	Bitcoin block<br>number
+transparency	Transparency
+enter_correct_hash	Enter correct hash
+partners	Partners
+to_address	To Address
+amount_to_send	Amount to<br>Send
+copied_to_clipboard	Copied to clipboard
+cant_copy	Can't copy
+copy_manually	Please select and copy manually
+gas_limit	Gas Limit
+gas_price	Gas Price
+tx_data	Data
+myetherwallet_will_opened_filled	The site myetherwallet.com with the filled transaction will be opened.
+login_into_wallet	Sign in to your wallet and complete the payment.
+first_payment	First payment?
+detailed_instruction	Detailed instruction
+pay_now	Pay now
+instruction	Instruction
+pay_myetherwallet	Pay with MyEtherWallet
+press_pay_now	1. Press button "Pay now"
+myetherwallet_will_opened	2. The site myetherwallet.com will be opened
+close_welcome_screen	3. Close welcome screen
+click_out_window	Click out of popup.
+sign_in_your_wallet	4. Sing in to your wallet
+sign_in_your_walle_any_variant	Any of the proposed methods.
+fields_are_filled	5. All fields are already filled in
+fields_are_filled_desc	Fire Lotto has already transferred all the necessary information about the payment.
+complete_payment	6. Complete transaction
+press_generate_transaction	Press button "Generate Transaction".
+press_send_transaction	Next press button "Send Transaction".
+check_my_tickets	7. Check "My Tickets"
+tickets	彩券
+ticket_1	彩券
+ticket_2	彩券
+ticket_5	彩券
+please_install_metamask	Please install MetaMask plugin:
+install_metamask	Install MetaMask
+login_metamask	Please login into MetaMask
+metamask_set_network	Please set Main Ethereum Network in MetaMask
+success	Success!
+metamask_complete	Tickets will appear in "My Tickets" after transaction is completed.
+help_title_1	如何參加
+help_content_1_1	請使用以太坊錢包購買彩券。點擊$1閱讀創建以太坊錢包的相關信息。
+help_content_1_2	在主頁選擇您想購買的彩券，您會跳轉至彩券界面，選擇一組數字，或點擊魔棒圖標，讓電腦隨機為您選擇數字。一旦您選擇了數字，魔棒圖標將會變成垃圾桶圖標。點擊垃圾桶圖標可刪除您選好的數字，魔棒將再次出現以供選擇。
+help_content_1_3	選擇完畢後，請點擊「購買」来購買彩券。系統會提示您使用MetaMask（建議與myetherwallet.com一起使用的Chrome瀏覽器安全外掛插件）進行支付，您還可以將資金從您的以太坊錢包直接轉賬到彩券智能合約地址（適合更高級的用戶）。
+help_content_1_4	購買後，如果您覺得今天運氣不錯，可返回上一級購買更多彩券 – 無需等候，彩券購買數量也沒有限制。
+help_content_1_5	系統將在每一輪彩券抽獎前一小時停止接收新的彩券。在此之後購買的所有彩券將自動進入下一輪抽獎。
+help_content_1_6	選出贏家後，系統可能需要30秒到幾小時來完成自動支付並將資金轉至贏家賬戶中。
+help_content_1_7	如需查看結果和統計數據，請去往「我的門票」，輸入您用來購買門票的錢包地址。
+help_title_2	抽獎時間
+help_content_2	每24小時抽獎一次。每個彩券列表中頭獎數額下方都有倒數計時器。
+help_title_3	彩券統計數據
+help_content_3	每次抽獎都有一個專屬索引號（例：Draw 35）。您可以使用該號碼在某個彩券的抽獎記錄中查找相關統計數據。在主頁上，點擊您想查看的彩券，然後點擊「抽獎記錄」標籤。下拉界面直至找到抽獎的索引編號以及抽獎的統計數據。
+help_title_4	如何查看
+help_content_4	處理時，計時器將停止計時，主頁上的彩券抽獎會顯示「正在進行」。點擊該彩券，然後點擊「抽獎記錄」選項，即可查看抽獎結果。
+help_title_5	贏家是如何選出的
+help_content_5	每次抽獎的中獎號碼由一個隨機數生成器（RNG）自動選擇出，這個隨機數生成器是基於區塊鏈技術的。本$1中更詳細的解釋了我們的RNG的算法。如果您是開發人員，為我們提供RNG的智能合約開放供人訪問，您可以在$2上進行檢查。
+help_title_6	付款與結果
+help_content_6	系統將頭獎獎金自動轉入用於購買獲獎彩券的加密錢包中。付款根據每張彩券的支付表在ETH中進行。請注意，在所有抽獎編號發佈後，資金轉移可能需要30秒到幾個小時不等。彩券組織者將支付獎金付款的所有相關交易費用。抽獎和獲取獎金的所有歷史都在每張彩券的「抽獎檔案」中，您還可以在「我的彩券」中查看您的獲獎彩券。輸入您用來購買彩券的加密錢包號碼來查看相關結果。
+transparency_1	Fire Lotto 使用基於區塊鏈的算法來選擇中獎號碼：
+transparency_2	中獎號碼完全隨機，並且無法提前獲知中獎號碼。
+transparency_3	沒有人能夠影響抽號的結果，即使是Fire Lotto的開發人員也無法影響。
+transparency_4	運作方式：
+transparency_5	抽獎結束一小時前，停止販賣票券。
+transparency_6	在抽獎結束後，我們將提取比特幣區塊鏈中的第一個區塊。
+transparency_7	無人能事先得知比特幣區塊哈希值。
+transparency_8	中獎號碼來自於區塊中的哈希值。
+transparency_9	請嘗試：
+enter_bitcoin_hash	輸入比特幣區塊哈希值（64個符號）
+4_bytes	4 bytes
+1_byte	1 byte
+transparency_10	算法的技術描述：$1。
+transparency_11	開放算法代碼公佈於 $1上。
+transparency_12	比特幣區塊號碼在每次抽獎中都有具體說明，具體說明在“抽獎檔案”中。
+transparency_13	在本頁中，您能查詢到比特幣區塊合規性的相關信息以及任何一次抽獎的號碼。
+rules_lotto	$1 彩券規則
+rules_guessed_numbers	匹配數字
+rules_prize	獎項
+rules_prize_percent	獎池的$1 / 有$2個數字匹配的玩家數量
+rules_participation	參與抽獎
+rules_participation_content	從您的彩券中選擇1到$2中的$1個數字來參加抽獎，也可以點擊魔棒圖標讓隨機數字生成器為您選擇數字。門票購買數量沒有限制，但禁止使用自動軟件工具購買彩券或填寫彩券信息。
+rules_tickets_purchase	購買彩券
+rules_tickets_purchase_content	截至彩券發行日期，根據購票當天以太坊的平均匯率計算，一張彩券的價格約為2美元。票價可能在將來發生變化。
+rules_tickets_purchase_content2	玩家在以太坊用加密貨幣錢包購買彩券，以確保付款安全。玩家還必須支付「gas」費用（使用以太坊網絡的交易費用）。使用以太坊購買一張彩券，玩家需要支付的平均GAS費用約為170,000。彩券獎金的轉賬費用由組織者承擔。一旦購買，彩券不能退換。
+rules_distributions_funds	資金分配
+rules_distributions_funds_content	每張抽獎的彩券銷售所得收益分配如下：70％進入獎池用於本次抽獎；15％用於廣告、營銷和法律支出； 10％作為手續費支付給FLOT代幣持有者；5％用於支付彩券獎金轉賬的技術費用（gas費用）。
+rules_jackpot_content	.
+rules_jackpot_content2	根據截至當日的以太坊平均匯率$1的Fire Lotto彩券頭獎獎金保證最低至少有$2美元。若頭獎獎金低於保證的最低頭獎金額，將用儲備基金補償差額。之後，所有原計劃用於未來抽獎頭獎獎金的資金將先被用來補充儲備基金。最初的儲備基金的資金來源為頭獎獎金以及組織者提供的資金。
+rules_prize_pool	獎池
+rules_prize_pool_content	每次抽獎的獎池根據該次抽獎的70％的銷售額計算。基於彩票中匹配號碼的數量，根據以下圖表分配獎池。
+prize_pool_distribution	獎池分配
+rules_prize_pool_content2	在第$1類中，總和除以該類別中的贏家人數。如果沒有贏家，則將該金額總和轉至下一次抽獎的頭獎獎池中。
+rules_prize_pool_content3	.
+draw_rised_funds	一次抽獎的彩券銷售量
+category_winners_count	類別贏家的數量
+rules_frequency	頻率
+rules_frequency_content	每24小時舉行一次抽獎。本次抽獎的時間在彩券上有顯示。彩券在抽獎前1小時結束售賣。此後，任何購買的彩券將用於下一次抽獎。
+rules_pay_winnings	獎金支付
+rules_pay_winnings_content	抽獎後，系統會自動將以太坊中的獎金轉賬至用於購買該獲獎彩券的加密貨幣錢包中。交易費用（gas費用）將以彩券的形式支付。將資金轉移至獲獎的加密貨幣錢包中需要30分鐘到幾個小時不等。
+rules_tax	稅
+rules_tax_content	Fire Lotto不提供稅務代理服務。獲得獎金的加密貨幣錢包的所有者承擔交稅責任。
+rules_agreement	協議
+rules_agreement_content	參與彩券購買即代表您已同意相關彩券規則，並保證您年滿18週歲，並/或滿足您的居住國家購買彩券的法定最低年齡限制。
+next	下一个
+skip_tutor	跳过教程
+imtoken1_1	1.打开imToken应用程序
+imtoken1_2	2.选择你的ETH钱包
+imtoken1_3	3.点击“发送”按钮
+imtoken1_4	4.点击“高级”开关
+imtoken1_5	5.填写交易表格（所有字段均为必填项）：
+imtoken1_to_address	收货人地址
+imtoken1_amount	量
+imtoken1_gas_price	Gas Price
+imtoken1_gas_limit	Gas
+imtoken1_data	数据
+imtoken1_6	完成后，点击“下一步”。 然后点击“确认”按钮。
+imtoken1_7	交易完成后，门票将出现在$1中。
+imtoken1_8	胜利将自动归功于您的imToken钱包。
