@@ -461,10 +461,7 @@
 						NUMBER:<span class="c_ba2636">1 2</span><br /> LUCKY NUMBERS:<span class="c_ba2636">1
 							2 3</span><br /> BONUS:<span class="c_ba2636">0.8<span data-plus-game="2bt"></span>ETH
 						</span> </span>
-					<p class="selectInfo"><span><strong class="c_ba2636">{{selectBetNum | toParseInt}}</strong> tickets selected <strong class="c_ba2636">{{betMul
-								| toParseInt}}</strong> multiple,<strong class="c_ba2636">{{selectOnceNum | toFix(2)}}</strong>ETH
-							<span class="c_727171" v-show="selectGain"> GET <strong class="c_ba2636"> {{selectBonusResult | toFix(2)}}
-								</strong>ETH IF WINNING, PROFIT <strong class="c_ba2636"> {{selectGain | toFix(2)}} </strong>ETH</span></span></p>
+					
 					<div style="text-align: center; margin: 30px;">
 						<span style="height: 50px; font-size: 18pt;" id="my_number"></span>
 						<input id="my_number_1" type="hidden">
@@ -485,6 +482,10 @@
 						<span class="holderWrapRight"><strong class="betMoneyCount">{{0.02 * betMul | toFix(2)}}</strong>ETH&nbsp;
 						</span>
 					</div>
+					<p class="selectInfo"><span><strong class="c_ba2636">{{selectBetNum | toParseInt}}</strong> tickets selected <strong class="c_ba2636">{{betMul
+						| toParseInt}}</strong> multiple,<strong class="c_ba2636">{{selectOnceNum | toFix(2)}}</strong>ETH
+					<span class="c_727171" v-show="selectGain"> GET <strong class="c_ba2636"> {{selectBonusResult | toFix(2)}}
+						</strong>ETH IF WINNING, PROFIT <strong class="c_ba2636"> {{selectGain | toFix(2)}} </strong>ETH</span></span></p>
 					<center>
 						<button class="btn_bet disabled">Purchase</button>
 					</center>
@@ -963,7 +964,7 @@
 		<a href="https://twitter.com/lottery35">Tweet</a>
 	</center>
 	<script src="plugins/jquery.js"></script>
-	<script src="plugins/vue.js"></script>
+	<script src="plugins/vue.min.js"></script>
 	<script src="plugins/plugins.js"></script>
 	<script>
 		var language ='en';
