@@ -84,9 +84,8 @@
 				<div class="game_logo">
 					<div class="cz_logo kuai3">
 						<span>
-							<span data-locale="total_jackpot">票价</span></span>
-						<div id="" style="font-size:30pt;">0.02</div>
-						<div class="hide" id="pool_total_balance" style="font-size:30pt;"></div>
+							<span data-locale="total_jackpot">奖池总金额</span></span>
+						<div id="pool_total_balance" style="font-size:30pt;"></div>
 						ETH
 					</div>
 
@@ -610,7 +609,7 @@
 								<!-- TODO 轮动给出中奖信息 -->
 								<li v-cloak v-for="item in betArr">
 									[第<span class="c_ba2636">{{item.args.round | toParseInt}}</span>期]
-									{{item.args._addr}} 投了
+									{{item.args._addr}} 下注
 									<span class="c_ba2636">{{item.args._mul | toParseInt}}</span> 倍</li>
 							</ul>
 						</div>
@@ -979,7 +978,7 @@
 			</table>
 		</div>
 		<!-- 我的彩票 -->
-		<div class="iDialog my_tickes" style="z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;"
+		<div class="iDialog my_tickes" style="display:none;z-index: 10003; width: 430px; left: 50%; top: 150px; margin-left: -215px;"
 		 v-show="isMyTicketsShow">
 			<table class="iDialogWrapTable">
 				<tbody>
